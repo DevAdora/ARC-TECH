@@ -1,17 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="styles/output.css" rel="stylesheet"> <!-- Link to compiled CSS -->
-  <title>Your Project</title>
-</head>
-<header>
-  <nav>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles/output.css" rel="stylesheet" />
+    <link href="styles/main.css" rel="stylesheet" />
+    <!-- Link to compiled CSS -->
+    <title>Your Project</title>
+  </head>
+  <nav class="top-0 left-0 w-full bg-gray-color text-pinkish-white-color">
+    <div class="flex justify-between items-center">
+      <div class="logo p-4 text-sm">
+        <p>ARC-TECH</p>
+      </div>
+      <div
+        class="nav-links list-none flex-wrap justify-center items-center gap-5"
+      >
+        <li class="mr-4 p-2 font-semibold text-lg">
+          <a href="#" class="mr-4 no-underline">About</a>
+          <a href="#" class="mr-4 no-underline">Contact</a>
+          <a href="#" class="mr-4 no-underline">Projects</a>
+        </li>
+      </div>
+    </div>
   </nav>
-</header>
-<body>
-  <h1 class="text-3xl font-bold underline text-center">Hello, Tailwind CSS!</h1>
-</body>
+  <body>
+    <section
+      class="home items-center flex justify-center h-screen text-center bg-pinkish-white-color"
+    >
+      <div
+        class="home-header container mx-auto rounded-3xl flex justify-center items-center h-1/2 w-1/2 bg-warm-gray-color"
+      >
+        <h1 class="p-5 font-bold text-7xl">ARC-TECH</h1>
+      </div>
+    </section>
+    <section class="about container h-screen">
+      <div class="about-title">
+        <h1 class="p-5 text-6xl font-semibold italic">About</h1>
+      </div>
+      <div class="about-desc p-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo, autem inventore exercitationem optio dolor modi ratione ad? Optio commodi deleniti vitae a dolore velit tempore ipsa assumenda, non quod?
+      </div>
+    </section>
+    <section class="projects container h-screen">
+      <div class="projects-title">
+        <h1>Projects</h1>
+      </div>
+    </section>
+  </body>
 </html>

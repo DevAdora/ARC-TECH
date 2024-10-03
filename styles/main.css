@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+:root {
+    --gray-color: #9EA69F;
+    --warm-gray-color: #6E7B70;
+    --warm-green-color: #344637;
+    --pinkish-gray-color: #6D6761;
+    --pinkish-white-color: #E9E3DC;
+}
+.home-bg {
+    background-image: url('../images/home-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
