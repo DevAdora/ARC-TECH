@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
 
 
 :root {
@@ -9,6 +10,7 @@
     --warm-green-color: #344637;
     --pinkish-gray-color: #6D6761;
     --pinkish-white-color: #E9E3DC;
+    font-family: 'Libre Bodoni';
 }
 .home-bg {
     background-image: url('../images/home-bg.jpg');
