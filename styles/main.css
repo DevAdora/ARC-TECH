@@ -20,3 +20,21 @@
     height: 100%;
     width: 100%;
 }
+.custom-border-top {
+    border-top: 1px solid var(--pinkish-gray-color);
+}
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden; 
+}
+
+.highlights-options {
+  display: flex;
+  width: 100%;
+  transform: translateX(0);
+}
+
+.option {
+  flex: 1 0 33%; 
+  transition: transform 0.5s ease-in-out;
+}

@@ -10,7 +10,7 @@
   </head>
   <nav class="top-0 left-0 w-full bg-gray-color text-pinkish-white-color">
     <div class="flex justify-between items-center">
-      <div class="logo p-4 text-sm">
+      <div class="logo p-4 text-sm text-pinkish-white-color">
         <p>ARC-TECH</p>
       </div>
       <div
@@ -29,9 +29,9 @@
       class="home items-center flex justify-center h-screen text-center bg-pinkish-white-color"
     >
       <div
-        class="home-header container mx-auto rounded-3xl flex justify-center items-center h-1/2 w-1/2 bg-warm-gray-color"
+        class="home-header container mx-auto rounded-3xl flex justify-center items-center h-1/2 w-1/2 bg-warm-gray-color blur-background"
       >
-        <h1 class="p-5 font-bold text-7xl">ARC-TECH</h1>
+        <h1 class="p-5 font-bold text-7xl text-pinkish-white-color">ARC-TECH</h1>
       </div>
     </section>
     <section class="about container h-screen">
@@ -39,20 +39,88 @@
         <h1 class="p-5 text-6xl font-semibold italic">About</h1>
       </div>
       <div class="about-desc p-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo, autem inventore exercitationem optio dolor modi ratione ad? Optio commodi deleniti vitae a dolore velit tempore ipsa assumenda, non quod?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo,
+        autem inventore exercitationem optio dolor modi ratione ad? Optio
+        commodi deleniti vitae a dolore velit tempore ipsa assumenda, non quod?
       </div>
     </section>
-    <section class="projects container h-screen ">
+    <section class="projects container h-screen">
       <div class="projects-title">
-        <h1 class="text-center font-semibold text-7xl uppercase p-5 text-warm-green-color">PROJECTS</h1>
+        <h1
+          class="text-center font-semibold text-7xl uppercase p-5 text-warm-green-color"
+        >
+          PROJECTS
+        </h1>
       </div>
     </section>
-    <section class="hightlights container h-screen">
-      <div class="hightlights">
-        <div class="highlighs-header">
-          <h1 class="text-7xl">Hightslights of the Week</h1>
-        </highlighs-header>
-      </hightlights>
+    <section class="hightlights container h-screen ">
+      <div class="highlighs-header">
+        <h1 class="text-7xl">Highlights of the Week</h1>
+      </div>
+      <div class="highlights-container container flex">
+        <div class="left-side h-full w-full justify-center items-center ">
+          <div class="highlights-img-container p-7">
+            <img src="images/home-bg.jpg" class="p-5 w-full h-auto" />
+            <p class="set-text-right p-2">House of Wickeds</p>
+          </div>
+        </div>
+        <div class="right-side">
+          <div
+            class="hightlights-desc-container w-full h-1/2 items-center justify-center flex"
+          >
+            <div class="highlights-desc w-full p-5">
+              <h1 class="text-xl p-2">House of Wickeds</h1>
+              <p class="p-2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Maiores, harum laborum at ex mollitia ipsum quaerat blanditiis
+                minus nihil architecto. Nisi soluta obcaecati qui itaque hic
+                nobis sed mollitia commodi?
+              </p>
+              <p class="set-text-right p-2">2024, Miami</p>
+            </div>
+          </div>
+          <div class="highlights-options-container custom-border-top p-5">
+            <h1 class=" ">Other hightlights</h1>
+            <div
+              class="highlights-options flex gap-5 justify-center items-center"
+            >
+              <div class="slider-wrapper flex overflow-hidden relative w-full">
+                <!-- Option 1 -->
+                <div class="option p-2 rounded-lg">
+                  <img
+                    src="images/home-bg.jpg"
+                    alt="Option 1"
+                    class="w-3/5 h-auto object-cover"
+                  />
+                </div>
+                <!-- Option 2 -->
+                <div class="option p-2 rounded-lg">
+                  <img
+                    src="images/home-bg.jpg"
+                    alt="Option 2"
+                    class="w-3/5 h-auto object-cover"
+                  />
+                </div>
+                <!-- Option 3 -->
+                <div class="option p-2 rounded-lg">
+                  <img
+                    src="images/home-bg.jpg"
+                    alt="Option 3"
+                    class="w-3/5 h-auto object-cover"
+                  />
+                </div>
+                
+              </div>
+            </div>
+            <button
+            id="next"
+            class="mt-5 bg-blue-500 text-white px-4 py-2 rounded-lg"
+          >
+            Next
+          </button>
+          </div>
+        </div>
+      </div>
     </section>
   </body>
 </html>
