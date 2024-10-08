@@ -31,7 +31,9 @@
       <div
         class="home-header container mx-auto rounded-3xl flex justify-center items-center h-1/2 w-1/2 bg-warm-gray-color blur-background"
       >
-        <h1 class="p-5 font-bold text-7xl text-pinkish-white-color">ARC-TECH</h1>
+        <h1 class="p-5 font-bold text-7xl text-pinkish-white-color">
+          ARC-TECH
+        </h1>
       </div>
     </section>
     <section class="about container h-screen">
@@ -53,22 +55,22 @@
         </h1>
       </div>
     </section>
-    <section class="hightlights container h-screen ">
+    <section class="hightlights container h-full w-full">
       <div class="highlighs-header">
         <h1 class="text-7xl">Highlights of the Week</h1>
       </div>
-      <div class="highlights-container container flex">
-        <div class="left-side h-full w-full justify-center items-center ">
+      <div class="highlights-container flex">
+        <div class="left-side h-full w-full ">
           <div class="highlights-img-container p-7">
             <img src="images/home-bg.jpg" class="p-5 w-full h-auto" />
-            <p class="set-text-right p-2">House of Wickeds</p>
+            <p class="set-text-right mr-4">House of Wickeds</p>
           </div>
         </div>
-        <div class="right-side">
+        <div class="right-side h-full w-full">
           <div
-            class="hightlights-desc-container w-full h-1/2 items-center justify-center flex"
+            class="hightlights-desc-container w-full h-full items-center justify-center flex p-5"
           >
-            <div class="highlights-desc w-full p-5">
+            <div class="highlights-desc w-full p-5 h-1/2">
               <h1 class="text-xl p-2">House of Wickeds</h1>
               <p class="p-2">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -76,48 +78,54 @@
                 minus nihil architecto. Nisi soluta obcaecati qui itaque hic
                 nobis sed mollitia commodi?
               </p>
-              <p class="set-text-right p-2">2024, Miami</p>
+              <p class="set-text-right mr-4">2024, Miami</p>
             </div>
           </div>
-          <div class="highlights-options-container custom-border-top p-5">
+          <div class="highlights-options-container custom-border-top p-5 w-full h-full items-center justify-center margin-top-5">
             <h1 class=" ">Other hightlights</h1>
             <div
-              class="highlights-options flex gap-5 justify-center items-center"
+              class="highlights-options flex justify-center items-center "
             >
-              <div class="slider-wrapper flex overflow-hidden relative w-full">
+              <div class="slider-wrapper flex overflow-hidden relative w-full" id="slider">
                 <!-- Option 1 -->
                 <div class="option p-2 rounded-lg">
                   <img
                     src="images/home-bg.jpg"
                     alt="Option 1"
-                    class="w-3/5 h-auto object-cover"
+                    class="w-full h-auto object-contain"
                   />
                 </div>
                 <!-- Option 2 -->
                 <div class="option p-2 rounded-lg">
                   <img
-                    src="images/home-bg.jpg"
+                    src="images/pic1.jpg"
                     alt="Option 2"
-                    class="w-3/5 h-auto object-cover"
+                    class="w-full h-auto object-contain"
                   />
                 </div>
                 <!-- Option 3 -->
                 <div class="option p-2 rounded-lg">
                   <img
-                    src="images/home-bg.jpg"
+                    src="images/pic2.jpg"
                     alt="Option 3"
-                    class="w-3/5 h-auto object-cover"
+                    class="w-full h-auto object-contain"
                   />
                 </div>
-                
+                <div class="option p-2 rounded-lg">
+                  <img
+                    src="images/home-bg.jpg"
+                    alt="Option 3"
+                    class="w-full h-auto object-contain"
+                  />
+                </div>
               </div>
             </div>
             <button
-            id="next"
-            class="mt-5 bg-blue-500 text-white px-4 py-2 rounded-lg"
-          >
-            Next
-          </button>
+              id="next"
+              class="mt-5 bg-blue-500 text-white px-4 py-2 rounded-lg"
+            >
+              Next
+            </button>
           </div>
         </div>
       </div>

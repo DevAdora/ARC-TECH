@@ -22,6 +22,11 @@
 }
 .custom-border-top {
     border-top: 1px solid var(--pinkish-gray-color);
+    padding: 2rem;
+    margin: 0 2rem;
+}
+.set-text-right {
+  text-align: right;
 }
 .slider-wrapper {
   width: 100%;
@@ -37,4 +42,7 @@
 .option {
   flex: 1 0 33%; 
   transition: transform 0.5s ease-in-out;
+}
+.margin-top-5 {
+  margin-top: 2rem;
 }
