@@ -60,10 +60,16 @@
         <h1 class="text-7xl">Highlights of the Week</h1>
       </div>
       <div class="highlights-container flex">
-        <div class="left-side h-full w-full ">
+        <div class="left-side h-full w-full">
           <div class="highlights-img-container p-7">
-            <img src="images/home-bg.jpg" class="p-5 w-full h-auto" />
-            <p class="set-text-right mr-4">House of Wickeds</p>
+            <img
+              id="highlighted-img"
+              src="images/home-bg.jpg"
+              class="p-5 w-full h-auto"
+            />
+            <p id="highlighted-title" class="set-text-right mr-4">
+              House of Wickeds
+            </p>
           </div>
         </div>
         <div class="right-side h-full w-full">
@@ -71,24 +77,45 @@
             class="hightlights-desc-container w-full h-full items-center justify-center flex p-5"
           >
             <div class="highlights-desc w-full p-5 h-1/2">
-              <h1 class="text-xl p-2">House of Wickeds</h1>
-              <p class="p-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Maiores, harum laborum at ex mollitia ipsum quaerat blanditiis
-                minus nihil architecto. Nisi soluta obcaecati qui itaque hic
-                nobis sed mollitia commodi?
+              <h1 id="highlighted-name" class="text-xl p-2">
+                House of Wickeds
+              </h1>
+              <p id="highlighted-description" class="p-2">
+                House of Wickeds is a striking architectural masterpiece located
+                in the heart of Miami, blending modern sophistication with a
+                hint of dark, avant-garde design. The structure boasts clean,
+                angular lines and towering glass façades that reflect the
+                vibrant city skyline. Its exterior combines sleek black steel
+                and deep charcoal concrete, creating a bold contrast against
+                Miami's tropical backdrop.
               </p>
-              <p class="set-text-right mr-4">2024, Miami</p>
+              <p id="highlighted-location" class="set-text-right mr-4">
+                2024, Miami
+              </p>
             </div>
           </div>
-          <div class="highlights-options-container custom-border-top p-5 w-full h-full items-center justify-center margin-top-5">
+          <div
+            class="highlights-options-container custom-border-top p-5 w-full h-full items-center justify-center margin-top-5"
+          >
             <h1 class=" ">Other hightlights</h1>
-            <div
-              class="highlights-options flex justify-center items-center "
-            >
-              <div class="slider-wrapper flex overflow-hidden relative w-full" id="slider">
+            <div class="highlights-options flex justify-center items-center">
+              <div
+                class="slider-wrapper flex overflow-hidden relative w-full"
+                id="slider"
+              >
                 <!-- Option 1 -->
-                <div class="option p-2 rounded-lg">
+                <div
+                  class="option p-2 rounded-lg"
+                  data-name="House of Wickeds"
+                  data-description="  House of Wickeds is a striking architectural masterpiece located
+                  in the heart of Miami, blending modern sophistication with a
+                  hint of dark, avant-garde design. The structure boasts clean,
+                  angular lines and towering glass façades that reflect the
+                  vibrant city skyline. Its exterior combines sleek black steel
+                  and deep charcoal concrete, creating a bold contrast against
+                  Miami's tropical backdrop."
+                  data-location="2024, Miami"
+                >
                   <img
                     src="images/home-bg.jpg"
                     alt="Option 1"
@@ -96,7 +123,12 @@
                   />
                 </div>
                 <!-- Option 2 -->
-                <div class="option p-2 rounded-lg">
+                <div
+                  class="option p-2 rounded-lg"
+                  data-name="White Noise"
+                  data-description="White Noise is a serene and minimalist architectural wonder nestled in the rugged landscapes of Scotland. Designed to blend seamlessly with the surrounding environment, the building features a stark white, angular façade that contrasts beautifully against the rolling green hills and dramatic skies. Its minimalist design is a study in simplicity, with clean lines, large geometric shapes, and a focus on functionality."
+                  data-location="2024, Scotland"
+                >
                   <img
                     src="images/pic1.jpg"
                     alt="Option 2"
@@ -104,22 +136,50 @@
                   />
                 </div>
                 <!-- Option 3 -->
-                <div class="option p-2 rounded-lg">
+                <div
+                  class="option p-2 rounded-lg"
+                  data-name="Mimicks of Shadow"
+                  data-description="Mimicks of Shadow is a captivating architectural marvel situated in Japan, deeply inspired by the country’s rich cultural relationship with light, shadow, and nature. This minimalist structure is a masterpiece of subtlety and balance, using sharp, angular forms and dark-hued materials to create a dynamic play of light and shadow throughout the day. The exterior, clad in deep charcoal wood and black steel, blends into its natural surroundings, allowing the building to almost disappear into the landscape at dusk."
+                  data-location="2024, Japan"
+                >
                   <img
                     src="images/pic2.jpg"
                     alt="Option 3"
                     class="w-full h-auto object-contain"
                   />
                 </div>
-                <div class="option p-2 rounded-lg">
+                <div
+                  class="option p-2 rounded-lg"
+                  data-name="Mimicks of Shadow"
+                  data-description="Mimicks of Shadow is a captivating architectural marvel situated in Japan, deeply inspired by the country’s rich cultural relationship with light, shadow, and nature. This minimalist structure is a masterpiece of subtlety and balance, using sharp, angular forms and dark-hued materials to create a dynamic play of light and shadow throughout the day. The exterior, clad in deep charcoal wood and black steel, blends into its natural surroundings, allowing the building to almost disappear into the landscape at dusk."
+                  data-location="2024, Japan"
+                >
                   <img
-                    src="images/home-bg.jpg"
+                    src="images/pic2.jpg"
+                    alt="Option 3"
+                    class="w-full h-auto object-contain"
+                  />
+                </div>
+                <div
+                  class="option p-2 rounded-lg"
+                  data-name="Mimicks of Shadow"
+                  data-description="Mimicks of Shadow is a captivating architectural marvel situated in Japan, deeply inspired by the country’s rich cultural relationship with light, shadow, and nature. This minimalist structure is a masterpiece of subtlety and balance, using sharp, angular forms and dark-hued materials to create a dynamic play of light and shadow throughout the day. The exterior, clad in deep charcoal wood and black steel, blends into its natural surroundings, allowing the building to almost disappear into the landscape at dusk."
+                  data-location="2024, Japan"
+                >
+                  <img
+                    src="images/pic2.jpg"
                     alt="Option 3"
                     class="w-full h-auto object-contain"
                   />
                 </div>
               </div>
             </div>
+            <button
+              id="previous"
+              class="mt-5 bg-blue-500 text-white px-4 py-2 rounded-lg"
+            >
+              Previous
+            </button>
             <button
               id="next"
               class="mt-5 bg-blue-500 text-white px-4 py-2 rounded-lg"
@@ -130,5 +190,79 @@
         </div>
       </div>
     </section>
+
+    <script>
+      let currentIndex = 0;
+      const visibleSlides = 3;
+      const slider = document.getElementById("slider");
+      const slides = document.querySelectorAll(".option");
+      const totalSlides = slides.length;
+
+      for (let i = 0; i < visibleSlides; i++) {
+        const clone = slides[i].cloneNode(true);
+        slider.appendChild(clone);
+      }
+
+      const totalSlidesWithClones = totalSlides + visibleSlides;
+      slider.style.width = `${(totalSlidesWithClones / visibleSlides) * 100}%`;
+
+      document.getElementById("next").addEventListener("click", function () {
+        currentIndex++;
+
+        if (currentIndex === totalSlides) {
+          slider.style.transition = "none";
+          n;
+          currentIndex = 0;
+          t;
+          slider.style.transform = `translateX(-${
+            currentIndex * (100 / visibleSlides)
+          }%)`;
+          setTimeout(() => {
+            slider.style.transition = "transform 0.5s ease-in-out";
+          });
+        } else {
+          slider.style.transform = `translateX(-${
+            currentIndex * (100 / visibleSlides)
+          }%)`;
+        }
+      });
+      document
+        .getElementById("previous")
+        .addEventListener("click", function () {
+          currentIndex--;
+
+          slider.style.transition = "transform 0.5s ease-in-out";
+          slider.style.transform = `translateX(-${
+            (100 / visibleSlides) * currentIndex
+          }%)`;
+
+        
+        });
+      const highlightedImg = document.getElementById("highlighted-img");
+      const highlightedTitle = document.getElementById("highlighted-title");
+      const highlightedName = document.getElementById("highlighted-name");
+      const highlightedDescription = document.getElementById(
+        "highlighted-description"
+      );
+      const highlightedLocation = document.getElementById(
+        "highlighted-location"
+      );
+
+      const options = document.querySelectorAll(".option");
+      options.forEach((option) => {
+        option.addEventListener("click", function () {
+          const imgSrc = this.querySelector("img").src;
+          const name = this.getAttribute("data-name");
+          const description = this.getAttribute("data-description");
+          const location = this.getAttribute("data-location");
+
+          highlightedImg.src = imgSrc;
+          highlightedTitle.textContent = name;
+          highlightedName.textContent = name;
+          highlightedDescription.textContent = description;
+          highlightedLocation.textContent = location;
+        });
+      });
+    </script>
   </body>
 </html>

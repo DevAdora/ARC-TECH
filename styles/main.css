@@ -1,48 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&display=swap");
 
 :root {
-    --gray-color: #9EA69F;
-    --warm-gray-color: #6E7B70;
-    --warm-green-color: #344637;
-    --pinkish-gray-color: #6D6761;
-    --pinkish-white-color: #E9E3DC;
-    font-family: 'Libre Bodoni';
+  --gray-color: #9ea69f;
+  --warm-gray-color: #6e7b70;
+  --warm-green-color: #344637;
+  --pinkish-gray-color: #6d6761;
+  --pinkish-white-color: #e9e3dc;
+  font-family: "Libre Bodoni";
 }
 .home-bg {
-    background-image: url('../images/home-bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
+  background-image: url("../images/home-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 }
 .custom-border-top {
-    border-top: 1px solid var(--pinkish-gray-color);
-    padding: 2rem;
-    margin: 0 2rem;
+  border-top: 1px solid var(--pinkish-gray-color);
+  padding: 2rem;
+  margin: 0 2rem;
 }
 .set-text-right {
   text-align: right;
 }
 .slider-wrapper {
-  width: 100%;
-  overflow: hidden; 
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: calc(100% * 8); 
+  overflow: hidden;
 }
 
 .highlights-options {
-  display: flex;
   width: 100%;
-  transform: translateX(0);
+  overflow: hidden;
 }
 
 .option {
-  flex: 1 0 33%; 
-  transition: transform 0.5s ease-in-out;
+  flex: 1 0 33.33%; 
 }
+
 .margin-top-5 {
   margin-top: 2rem;
 }
