@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="styles/output.css" rel="stylesheet" />
     <link href="styles/main.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- Link to compiled CSS -->
     <title>ARC-TECH</title>
   </head>
@@ -190,7 +192,44 @@
         </div>
       </div>
     </section>
-
+    <section
+      class="w-full flex-col items-center relative overflow-hidden gap-12"
+    >
+      <div class="footer-header text-center flex-col flex items-center pt-16 w-full">
+        <h1 class="text-7xl">CONTACT US</h1>
+      </div>
+      <div
+        class="footer-content w-full flex flex-wrap gap-8 justify-between items-start"
+      >
+          <div class="footer-links text-lg flex items-start flex-col flex-1 gap-1">
+            <h3>Socials</h3>
+            <hr>
+            <a href="">Instagram</a>
+            <a href="">Facebook</a>
+            <a href="">X</a>
+            <a href="">Youtube</a>
+          </div>
+          <div class="footer-links text-lg flex items-start flex-col flex-1 gap-1">
+            <h3>Navigation</h3>
+            <hr>
+            <a href="">Home</a>
+            <a href="">About</a>
+            <a href="">Gallery</a>
+            <a href="">Contacts</a>
+          </div>
+          <div class="footer-links text-lg flex items-start flex-col flex-1 gap-1">
+            <h3>Address</h3>
+            <hr>
+            <a href="">Instagram</a>
+            <a href="">Facebook</a>
+            <a href="">X</a>
+            <a href="">Youtube</a>
+          </div>
+      </div>
+      <div class="footer-copyright w-full text-center bg-gray-color">
+        <p class="p-2">Copyright 2024</p>
+      </div>
+    </section>
     <script>
       let currentIndex = 0;
       const visibleSlides = 3;
@@ -235,8 +274,6 @@
           slider.style.transform = `translateX(-${
             (100 / visibleSlides) * currentIndex
           }%)`;
-
-        
         });
       const highlightedImg = document.getElementById("highlighted-img");
       const highlightedTitle = document.getElementById("highlighted-title");
