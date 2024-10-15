@@ -17,9 +17,9 @@
     <!-- Link to compiled CSS -->
     <title>ARC-TECH</title>
   </head>
-  <nav class="top-0 left-0 w-full bg-gray-color text-pinkish-white-color">
+  <nav class="top-0 left-0 w-full fixed text-warm-gray-color">
     <div class="flex justify-between items-center">
-      <div class="logo p-4 text-sm text-pinkish-white-color">
+      <div class="logo p-4 text-sm text-warm-gray-color">
         <p>ARC-TECH</p>
       </div>
       <div
@@ -39,7 +39,7 @@
       id="home"
     >
       <div
-        class="home-header container mx-auto rounded-3xl flex justify-center items-center h-1/2 w-1/2 bg-warm-gray-color blur-background"
+        class="home-header container mx-auto rounded-3xl flex justify-center items-center h-1/2 w-1/2 backdrop-blur-md"
       >
         <h1 class="p-5 font-bold text-7xl text-pinkish-white-color">
           ARC-TECH
@@ -47,27 +47,34 @@
       </div>
     </section>
     <section class="about container h-screen" id="about">
-      <div class="about-title">
-        <h1 class="p-5 text-6xl font-semibold italic">About</h1>
-      </div>
-      <div class="about-desc p-5">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo,
-        autem inventore exercitationem optio dolor modi ratione ad? Optio
-        commodi deleniti vitae a dolore velit tempore ipsa assumenda, non quod?
-      </div>
-    </section>
-    <section class="projects container h-screen" id="projects">
-      <div class="projects-title">
-        <h1
-          class="text-center font-semibold text-7xl uppercase p-5 text-warm-green-color"
-        >
-          PROJECTS
-        </h1>
+      <div
+        class="about-desc-container flex items-center justify-center w-full h-full"
+      >
+        <div class="about-title w-1/2 justify-center text-center">
+          <h1 class="p-5 text-6xl font-semibold italic">About</h1>
+          <h1 class="mb-5 text-6xl font-bold">ARC-TECH</h1>
+        </div>
+        <div class="about-desc p-5 w-1/2 leading-6 font-semibold">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quo,
+          autem inventore exercitationem optio dolor modi ratione ad? Optio
+          commodi deleniti vitae a dolore velit tempore ipsa assumenda, non
+          quod?
+        </div>
       </div>
     </section>
-    <section class="hightlights container h-full w-full">
-      <div class="highlighs-header">
-        <h1 class="text-7xl">Highlights of the Week</h1>
+    <section
+      class="projects h-screen bg-warm-gray-color w-full text-pinkish-white-color"
+      id="projects"
+    >
+      <div class="projects-title flex text-right items-end justify-end">
+        <p class="text-5xl mb-9">/01</p>
+        <h1 class="text-center font-bold text-9xl uppercase p-5">PROJECTS.</h1>
+      </div>
+    </section>
+    <section class="hightlights h-full w-full">
+      <div class="highlighs-header flex justify-end items-end w-3/5">
+        <h1 class="text-9xl">Highlights of the Week.</h1>
+        <p class="text-5xl mb-3">/02</p>
       </div>
       <div class="highlights-container flex">
         <div class="left-side h-full w-full">
@@ -187,15 +194,11 @@
             <button
               id="previous"
               class="mt-5 bg-gray-color text-white px-4 py-2 rounded-lg fa-solid fa-arrow-left"
-            >
-
-            </button>
+            ></button>
             <button
               id="next"
               class="mt-5 bg-gray-color text-white px-4 py-2 rounded-lg fa-solid fa-arrow-right"
-            >
-            
-            </button>
+            ></button>
           </div>
         </div>
       </div>
@@ -209,14 +212,18 @@
       >
         <h1 class="text-8xl font-bold">CONTACT US</h1>
       </div>
-      <div  
-        class="footer-content w-full flex flex-wrap gap-8 justify-between items-start "
+      <div
+        class="footer-content w-full flex flex-wrap gap-8 justify-between items-start"
       >
         <div
           class="footer-links text-lg flex items-start flex-col flex-1 gap-1"
         >
-          <h3 class="customer-border-bottom mb-2 text-xl uppercase font-semibold">Socials</h3>
-          <hr>
+          <h3
+            class="customer-border-bottom mb-2 text-xl uppercase font-semibold"
+          >
+            Socials
+          </h3>
+          <hr />
           <a href="">Instagram</a>
           <a href="">Facebook</a>
           <a href="">X</a>
@@ -225,8 +232,12 @@
         <div
           class="footer-links text-lg flex items-start flex-col flex-1 gap-1"
         >
-          <h3 class="customer-border-bottom mb-2 text-xl uppercase font-semibold">Navigation</h3>
-          <hr>
+          <h3
+            class="customer-border-bottom mb-2 text-xl uppercase font-semibold"
+          >
+            Navigation
+          </h3>
+          <hr />
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#projects">Gallery</a>
@@ -235,15 +246,21 @@
         <div
           class="footer-links text-lg flex items-start flex-col flex-1 gap-1"
         >
-          <h3 class="customer-border-bottom mb-2 text-xl uppercase font-semibold">Address</h3>
-          <hr>
+          <h3
+            class="customer-border-bottom mb-2 text-xl uppercase font-semibold"
+          >
+            Address
+          </h3>
+          <hr />
           <a href="">Instagram</a>
           <a href="">Facebook</a>
           <a href="">X</a>
           <a href="">Youtube</a>
         </div>
       </div>
-      <div class="footer-copyright w-full text-center text-pinkish-white-color bg-warm-gray-color">
+      <div
+        class="footer-copyright w-full text-center text-pinkish-white-color bg-warm-gray-color"
+      >
         <p class="p-2">Copyright 2024</p>
       </div>
     </section>
