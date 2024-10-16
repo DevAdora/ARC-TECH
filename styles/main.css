@@ -21,18 +21,21 @@ body {
   background-color: var(--pinkish-white-color);
 }
 .home {
-  background-image: url("../images/pic6.jpg");
+  
+  background-image: url("../images/pic1.jpg");
   background-size: cover;
+
   background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
 }
 .custom-border-top {
   border-top: 1px solid var(--pinkish-gray-color);
-  padding: 2rem;
-  margin: 0 2rem;
+
+ 
 }
 .customer-border-bottom {
-  border-bottom: 1px solid var(--warm-gray-color);
+  border-bottom: 1px solid var(--pinkish-white-color);
   width: 100%;
 
 }
