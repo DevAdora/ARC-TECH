@@ -24,10 +24,10 @@ body {
   
   background-image: url("../images/pic1.jpg");
   background-size: cover;
-
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  box-shadow: inset 1rem 0 5rem 0 var(--pinkish-white-color), 0 0 2rem 0 var(--pinkish-white-color);
 }
 .custom-border-top {
   border-top: 1px solid var(--pinkish-gray-color);
