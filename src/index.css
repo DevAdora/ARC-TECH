@@ -2,6 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "MyFont";
+  src: url("/fonts/brown-sugar.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MyFont";
+  src: url("/fonts/brown-sugar.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+.hero {
+  background-image: url("/assets/ARC-TECH.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
 /* 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
