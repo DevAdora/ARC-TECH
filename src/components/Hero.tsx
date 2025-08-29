@@ -52,7 +52,7 @@ export default function Hero() {
             Rent
           </button>
         </div>
-        <div className="flex items-center justify-between min-h-[12vh] px-8 py-6">
+        <div className="flex items-center justify-between min-h-[12npmvh] px-8 py-6">
 
           <div className="flex flex-col">
             <label className="text-sm text-gray-500">Location</label>
