@@ -6,8 +6,7 @@ export default function Hero() {
   const [activeTab, setActiveTab] = useState("buy");
 
   return (
-    <section className="hero w-full min-h-screen flex flex-col justify-between px-8 py-12">
-      {/* Top Section (Heading + Paragraph) */}
+    <section className="hero w-full min-h-screen flex flex-col justify-between px-10 py-12">
       <div>
         <motion.h1
           initial={{ opacity: 0, y: 50 }}

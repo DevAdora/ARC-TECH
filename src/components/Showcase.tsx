@@ -5,12 +5,12 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 const highlightsData = [
   {
     id: 1,
-    name: "White Noise",
+    name: "Ocean Veranda",
     type: "Mansion",
     location: "Miami, Florida",
     price: "$1,000,000",
-    image: "assets/service.png",
-    preview:"assets/service.png",
+    image: "assets/h1.png",
+    preview:"assets/h2.png",
 
   },
   {
@@ -61,12 +61,7 @@ export default function Showcase() {
 
         <div className="px-4 w-[100%] h-full justify-center items-center flex font-myfont">
           {/*  Number */}
-          <div
-            className="absolute text-[40rem] text-gray-950 -z-10 font-myfont right-[40%]
-          "
-          >
-            {current.id}
-          </div>
+         
           <div className="flex flex-col">
             <h1 className="text-5xl font-thin tracking-widest mb-6 text-[10rem]">
               {current.name}
@@ -88,7 +83,7 @@ export default function Showcase() {
         <div className="p-8 w-[100%] h-full justify-center items-center flex">
           <div
             ref={containerRef}
-            className="w-[100%] items-start justify-start flex flex-col"
+            className="w-[100%] items-start justify-start flex flex-col p-8"
           >
             <div className="relative group w-full">
               <img
@@ -106,7 +101,7 @@ export default function Showcase() {
               <img
                 src={current.preview}
                 alt="preview"
-                className="w-full h-full object-contain"
+                className="w-[50%] h-full object-contain"
               />
 
               <button
