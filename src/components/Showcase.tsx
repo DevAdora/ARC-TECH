@@ -54,7 +54,7 @@ export default function Showcase() {
       <div className="flex flex-row w-full h-[100vh] justify-center items-center">
         {/* Left Title */}
         <div className="left-0 top-0 px-4 w-[12%] h-full justify-center items-center flex">
-          <div className="text-black text-[9rem] font-bold tracking-widest rotate-90 font-myfont">
+          <div className="text-black text-[7rem] font-bold tracking-widest rotate-90 font-myfont">
             HIGHLIGHTS
           </div>
         </div>

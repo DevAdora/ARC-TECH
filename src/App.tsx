@@ -3,6 +3,7 @@ import Showcase from "./components/Showcase";
 import Header from "./components/Header";
 import Services from "./components/Services";
 import Feedback from "./components/Feedback";
+import Recent from "./components/Recent";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Services />
       <Showcase />
       <Feedback />
+      <Recent />
     </div>
   );
 }
