@@ -1,6 +1,6 @@
 export default function Recent() {
   return (
-<section className="bg-[#0b0b0a] w-full h-[100%] flex flex-col">
+    <section className="relative w-full min-h-screen bg-white flex flex-col justify-center items-center px-8 py-12 z-20 shadow-2xl">
       <h1 className="p-4 items-center justify-center text-[8rem] font-semibold text-white  select-none pointer-events-none">
         <span className="font-myfont">RECENT</span> SALES
       </h1>

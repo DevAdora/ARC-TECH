@@ -10,8 +10,7 @@ const highlightsData = [
     location: "Miami, Florida",
     price: "$1,000,000",
     image: "assets/h1.png",
-    preview:"assets/h2.png",
-
+    preview: "assets/h2.png",
   },
   {
     id: 2,
@@ -50,7 +49,7 @@ export default function Showcase() {
   };
 
   return (
-    <div className="w-full h-screen items-center justify-between  overflow-hidden">
+    <div className="relative w-full min-h-screen bg-white flex flex-col justify-center items-center px-8 py-12 z-20">
       <div className="flex flex-row w-full h-[100vh] justify-center items-center">
         {/* Left Title */}
         <div className="left-0 top-0 px-4 w-[12%] h-full justify-center items-center flex">
@@ -61,7 +60,7 @@ export default function Showcase() {
 
         <div className="px-4 w-[100%] h-full justify-center items-center flex font-myfont">
           {/*  Number */}
-         
+
           <div className="flex flex-col">
             <h1 className="text-5xl font-thin tracking-widest mb-6 text-[10rem]">
               {current.name}

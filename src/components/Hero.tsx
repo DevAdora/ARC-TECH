@@ -1,91 +1,85 @@
-import { useRef, useEffect, useState } from "react";
-import { Search } from "lucide-react";
+// Hero.tsx
+"use client";
 
+import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Hero Component
+// Hero Component
 export default function Hero() {
-  const [activeTab, setActiveTab] = useState("buy");
+  const heroRef = useRef<HTMLDivElement | null>(null);
+  const bgRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const hero = heroRef.current;
+    const bg = bgRef.current;
+
+    // Parallax Background - moves slower than scroll
+    gsap.to(bg, {
+      yPercent: 30,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".trigger-spacer",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    // Hide hero when scrolling past the spacer
+    ScrollTrigger.create({
+      trigger: ".trigger-spacer",
+      start: "bottom bottom",
+      onEnter: () => {
+        if (hero) {
+          hero.style.visibility = "hidden";
+          hero.style.opacity = "0";
+        }
+      },
+      onLeaveBack: () => {
+        if (hero) {
+          hero.style.visibility = "visible";
+          hero.style.opacity = "1";
+        }
+      },
+    });
+  }, []);
 
   return (
-    <section className="hero relative w-full min-h-screen flex flex-col justify-between px-10 py-12 overflow-hidden bg-[url('/your-image.jpg')] bg-cover bg-center">
-      {/* Gradient overlay for better readability */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50 z-[1]" />
+    <>
+      {/* FIXED HERO SECTION */}
+      <section
+        ref={heroRef}
+        className="fixed top-0 left-0 w-full h-screen overflow-hidden z-[1] transition-opacity duration-300"
+      >
+        {/* PARALLAX BACKGROUND */}
+        <div
+          ref={bgRef}
+          className="absolute inset-0 w-full h-[120vh] -top-[10vh]"
+          style={{
+            backgroundImage: 'url("/assets/Home-bg.jpg")',
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
 
-      {/* Main heading content */}
-      <div className="relative z-10">
-        <h1 className="text-[8rem] font-myfont font-bold text-white drop-shadow-2xl">
-          ARC-TECH
-        </h1>
-        <p className="text-[2rem] text-white w-[50%] leading-relaxed mt-6 font-myfont drop-shadow-lg">
-          Discover the art behind the structures — explore ARC-TECH and
-          experience architecture where aesthetics meet history.
-        </p>
-      </div>
+        {/* BLACK OVERLAY */}
+        <div className="absolute inset-0 bg-black/40 z-[1]" />
 
-      {/* Search Box */}
-      <div className="bg-white/95 backdrop-blur-md min-h-[12vh] rounded-xl shadow-2xl px-8 py-6 mb-4 relative z-10 border border-white/20">
-        {/* Tab buttons */}
-        <div className="flex space-x-6 mb-4">
-          <button
-            onClick={() => setActiveTab("buy")}
-            className={`text-lg font-semibold transition-all duration-300 ${
-              activeTab === "buy"
-                ? "text-black border-b-2 border-black"
-                : "text-gray-500 hover:text-black"
-            }`}
-          >
-            Buy
-          </button>
-          <button
-            onClick={() => setActiveTab("rent")}
-            className={`text-lg font-semibold transition-all duration-300 ${
-              activeTab === "rent"
-                ? "text-black border-b-2 border-black"
-                : "text-gray-500 hover:text-black"
-            }`}
-          >
-            Rent
-          </button>
+        {/* HERO CONTENT - FIXED AT BOTTOM */}
+        <div className="absolute bottom-24 left-12 z-[2] pointer-events-none">
+          <p className="text-[2rem] font-onest text-white w-[55%] leading-relaxed drop-shadow-lg">
+            Discover the art behind the structures — explore ARC-TECH and
+            experience architecture where aesthetics meet history.
+          </p>
         </div>
-        
-        {/* Search form */}
-        <div className="flex items-center justify-between">
-          <div className="flex flex-col min-w-0">
-            <label className="text-sm text-gray-500 mb-1">Location</label>
-            <select className="bg-transparent text-black font-medium focus:outline-none cursor-pointer">
-              <option>BGC, Taguig</option>
-              <option>Makati</option>
-              <option>Quezon City</option>
-            </select>
-          </div>
+      </section>
 
-          <div className="h-10 w-px bg-gray-300 mx-6"></div>
-
-          <div className="flex flex-col min-w-0">
-            <label className="text-sm text-gray-500 mb-1">Property Type</label>
-            <select className="bg-transparent text-black font-medium focus:outline-none cursor-pointer">
-              <option>Hotel & Suite</option>
-              <option>Condo</option>
-              <option>House</option>
-              <option>Lot</option>
-            </select>
-          </div>
-
-          <div className="h-10 w-px bg-gray-300 mx-6"></div>
-
-          <div className="flex flex-col min-w-0">
-            <label className="text-sm text-gray-500 mb-1">Price Range</label>
-            <input
-              type="text"
-              placeholder="$21,000 - $30,000"
-              className="bg-transparent text-black font-medium focus:outline-none placeholder-gray-400 min-w-0"
-            />
-          </div>
-
-          <button className="flex items-center space-x-2 bg-[#2c2a27] text-white px-6 py-3 rounded-xl font-medium hover:bg-black hover:scale-105 transition-all duration-300 ml-6 shadow-lg">
-            <Search size={18} />
-            <span>Search</span>
-          </button>
-        </div>
-      </div>
-    </section>
+      {/* SPACER TO ENABLE SCROLLING */}
+      <div className="trigger-spacer h-screen w-full relative z-[0]" />
+    </>
   );
 }

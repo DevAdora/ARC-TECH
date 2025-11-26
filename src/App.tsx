@@ -16,6 +16,7 @@ export default function App() {
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [isRevealComplete, setIsRevealComplete] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(10);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
     document.body.style.height = "100vh";
@@ -26,7 +27,7 @@ export default function App() {
     });
 
     gsap.set(overlayRef.current, {
-      clipPath: "circle(10% at 50% 50%)", 
+      clipPath: "circle(10% at 50% 50%)",
     });
 
     const handleScroll = (e: WheelEvent | any) => {
@@ -109,14 +110,6 @@ export default function App() {
         }}
       >
         <div className="absolute inset-0">
-          <div
-            className="absolute inset-0 bg-[url('/your-image.jpg')] bg-cover bg-center opacity-0"
-            style={{
-              opacity: scrollProgress > 20 ? 1 : 0,
-              transition: "opacity 0.8s ease",
-            }}
-          />
-
           <div className="absolute inset-0 bg-black" />
 
           <div className="absolute inset-0 flex items-center justify-center">

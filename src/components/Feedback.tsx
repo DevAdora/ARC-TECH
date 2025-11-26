@@ -9,14 +9,16 @@ export default function Feedback() {
       name: "John Doe",
       role: "CEO, Company A",
       feedback:
-  "Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros.",      image: "assets/service.png",
+        "Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros.",
+      image: "assets/service.png",
     },
     {
       id: 2,
       name: "Jane Smith",
       role: "CTO, Company B",
       feedback:
-  "Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros.",      image: "assets/service.png",
+        "Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros. Nunc quis orci consequat, vehicula elit at, varius metus. Suspendisse potenti. Integer posuere orci nec eros.",
+      image: "assets/service.png",
     },
     {
       id: 3,
@@ -38,19 +40,19 @@ export default function Feedback() {
     setIndex((prev) => (prev + 1) % feedbackData.length);
   };
 
-  const getPosition = (cardIndex:any) => {
-    const diff = (cardIndex - index + feedbackData.length) % feedbackData.length;
-    if (diff === 0) return "center"; 
+  const getPosition = (cardIndex: any) => {
+    const diff =
+      (cardIndex - index + feedbackData.length) % feedbackData.length;
+    if (diff === 0) return "center";
     if (diff === 1) return "right";
     return "left";
   };
 
   return (
-    <section className="w-full min-h-[100vh] flex flex-col items-center justify-center overflow-hidden relative px-6">
-
+    <section className="relative w-full min-h-screen bg-white flex flex-col justify-center items-center px-8 py-12 z-20">
       <div className="text-[8rem] w-[70%] text-center">
         RECENT <span className="font-myfont">FEEDBACK</span> FROM OUR CLIENTS
-        </div>
+      </div>
       <div className="flex gap-4 mb-8">
         <button
           onClick={prev}
