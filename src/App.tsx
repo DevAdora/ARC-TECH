@@ -30,11 +30,21 @@ export default function App() {
       clipPath: "circle(10% at 50% 50%)",
     });
 
-    const handleScroll = (e: WheelEvent | any) => {
+    const handleScroll = (e: WheelEvent | TouchEvent) => {
       if (!isRevealComplete) {
         e.preventDefault();
 
-        const delta = e.deltaY || e.detail || e.wheelDelta;
+        let delta = 0;
+
+        if (e instanceof WheelEvent) {
+          delta = e.deltaY;
+        }
+
+        if (e instanceof TouchEvent) {
+          const touch = e.touches[0] || e.changedTouches[0];
+          if (touch) delta = 5;
+        }
+
         const newProgress = Math.min(
           Math.max(scrollProgress + (delta > 0 ? 5 : -5), 0),
           100
@@ -53,23 +63,21 @@ export default function App() {
         if (newProgress >= 100 && !isRevealComplete) {
           setIsRevealComplete(true);
 
-          gsap.to(contentRef.current, {
+          gsap.to(contentRef.current!, {
             visibility: "visible",
             opacity: 1,
             duration: 0.8,
             ease: "power2.out",
           });
 
-          gsap.to(overlayRef.current, {
+          gsap.to(overlayRef.current!, {
             opacity: 0,
             duration: 0.8,
             ease: "power2.out",
             onComplete: () => {
               document.body.style.overflow = "auto";
               document.body.style.height = "auto";
-              if (overlayRef.current) {
-                overlayRef.current.style.display = "none";
-              }
+              overlayRef.current!.style.display = "none";
             },
           });
         }
@@ -77,12 +85,17 @@ export default function App() {
     };
 
     window.addEventListener("wheel", handleScroll, { passive: false });
-    window.addEventListener("DOMMouseScroll", handleScroll, { passive: false });
+    window.addEventListener("DOMMouseScroll", handleScroll as EventListener, {
+      passive: false,
+    });
     window.addEventListener("touchmove", handleScroll, { passive: false });
 
     return () => {
       window.removeEventListener("wheel", handleScroll);
-      window.removeEventListener("DOMMouseScroll", handleScroll);
+      window.removeEventListener(
+        "DOMMouseScroll",
+        handleScroll as EventListener
+      );
       window.removeEventListener("touchmove", handleScroll);
       document.body.style.overflow = "auto";
       document.body.style.height = "auto";
@@ -103,21 +116,21 @@ export default function App() {
 
       <div
         ref={overlayRef}
-        className="fixed inset-0 z-[9999] bg-black"
+        className="fixed inset-0 z-[9999] bg-[url('/assets/home-bg-2.jpg')]"
         style={{
           display: isRevealComplete ? "none" : "block",
           clipPath: "circle(10% at 50% 50%)",
         }}
       >
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-black" />
+        <div className="absolute inset-0 bg-[url('/assets/Home-bg.jpg')] bg-no-repeat bg-cover bg-center h-screen w-full">
+          <div className="absolute inset-0 bg-black/40 z-[1]" />
 
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white">
-              <h2 className="text-6xl font-bold mb-4 drop-shadow-lg font-myfont">
+              <h2 className="text-6xl text-white font-bold mb-4 drop-shadow-lg font-myfont">
                 ARC-TECH
               </h2>
-              <p className="text-xl opacity-80 mb-6">
+              <p className="text-xl opacity-80 mb-6 text-white">
                 Scroll to reveal ({Math.round(scrollProgress)}%)
               </p>
               <div className="w-64 h-2 bg-white/20 rounded-full mx-auto mb-6">
@@ -126,8 +139,8 @@ export default function App() {
                   style={{ width: `${scrollProgress}%` }}
                 />
               </div>
-              <div className="w-8 h-12 border-2 border-white/50 rounded-full flex justify-center mx-auto">
-                <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce" />
+              <div className="w-8 h-12 border-2 border-white rounded-full flex justify-center mx-auto">
+                <div className="w-1 h-3 bg-white rounded-full mt-2 animate-bounce" />
               </div>
             </div>
           </div>

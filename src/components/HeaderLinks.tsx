@@ -1,11 +1,14 @@
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
+"use client";
+import { useState, useEffect, useRef } from "react";
 
 // ScrambleText Component
-export default function ScrambleText({ label }: { label: string }) {
+export default function ScrambleText({
+  label,
+  isLight = false,
+}: {
+  label: string;
+  isLight?: boolean;
+}) {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const [textValue, setTextValue] = useState<string>(label);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -49,7 +52,11 @@ export default function ScrambleText({ label }: { label: string }) {
   return (
     <span
       onMouseEnter={triggerScramble}
-      className="cursor-pointer transition-colors hover:text-gray-300"
+      className={`font-onest cursor-pointer transition-colors relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
+        isLight
+          ? "hover:text-gray-300 after:bg-white"
+          : "hover:text-gray-950 after:bg-black"
+      }`}
     >
       {textValue}
     </span>
