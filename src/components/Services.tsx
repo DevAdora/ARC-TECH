@@ -29,45 +29,41 @@ export default function Services() {
     );
   }, []);
 
-  const servicesData = [
-    {
-      number: "$1,000,000+",
-      title: "Sales",
-      image: "/assets/service.png",
-    },
-    {
-      number: "100+",
-      title: "Clients",
-      image: "/assets/service2.png",
-    },
-    {
-      number: "8+",
-      title: "Years in the Industry",
-      image: "/assets/service3.png",
-    },
-  ];
 
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-screen bg-white flex flex-col justify-center items-center px-8 py-12 z-20 shadow-2xl"
+      className="relative w-full min-h-screen bg-white flex flex-col justify-center items-center px-8 py-12 z-20 shadow-2xl font-onest"
     >
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full justify-center items-center max-w-7xl">
-        {servicesData.map((service, index) => (
-          <div
-            key={index}
-            className="w-full h-[250px] rounded-lg flex flex-col justify-center items-center text-white relative overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105"
-            style={{
-              backgroundImage: `url(${service.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <div className="absolute inset-0 bg-black/40 transition-colors duration-300 hover:bg-black/30"></div>
-            <h1 className="text-4xl font-bold z-10">{service.number}</h1>
-            <span className="mt-2 text-lg z-10">{service.title}</span>
-          </div>
-        ))}
+      {" "}
+      <div className="font-onest text-start justify-start flex">
+        <h1 className="text-[8rem] leading-[100px]">
+          EXPERIENCE ARCHITECTURE — TECHNOLOGY
+        </h1>
+      </div>
+      <div className="row justify-center items-center row-cols-2 w-[500px]">
+        <div>
+          <img
+            src="/assets/home-bg-1.jpg"
+            className="w-[500px] h-[500px]"
+          ></img>
+        </div>
+        <div>
+          <h3 className="font-semibold text-[1.6rem] leading-[25px] py-4">
+            ARC-TECH provides a digital platform dedicated to exploring and
+            presenting the world of architecture. It delivers carefully curated
+            content that blends aesthetic appeal with factual accuracy,
+            showcasing architectural styles, structures, and design principles
+            from around the globe.
+          </h3>
+          <span className="font-semibold text-[1.6rem] leading-[25px] py-4">
+            By combining modern web technologies with compelling visual
+            storytelling, ARC-TECH offers users an immersive educational
+            experience—allowing enthusiasts, students, and professionals to
+            discover, learn, and appreciate architecture in a clear and engaging
+            way.
+          </span>
+        </div>
       </div>
     </section>
   );

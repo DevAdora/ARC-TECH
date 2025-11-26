@@ -40,7 +40,7 @@ export default function Feedback() {
     setIndex((prev) => (prev + 1) % feedbackData.length);
   };
 
-  const getPosition = (cardIndex: any) => {
+  const getPosition = (cardIndex: number): "center" | "left" | "right" => {
     const diff =
       (cardIndex - index + feedbackData.length) % feedbackData.length;
     if (diff === 0) return "center";
