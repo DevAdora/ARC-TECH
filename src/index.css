@@ -16,6 +16,9 @@
   font-style: normal;
 }
 
+body {
+  scroll-behavior: smooth;
+}
 
 .hero {
   background-image: url("/assets/home-bg-2.jpg");

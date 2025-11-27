@@ -1,124 +1,100 @@
-import { useState, useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ArrowLeft, ArrowRight } from "lucide-react";
-
-const highlightsData = [
-  {
-    id: 1,
-    name: "Ocean Veranda",
-    type: "Mansion",
-    location: "Miami, Florida",
-    price: "$1,000,000",
-    image: "assets/h1.png",
-    preview: "assets/h2.png",
-  },
-  {
-    id: 2,
-    name: "Ocean Breeze",
-    type: "Villa",
-    location: "Malibu, California",
-    price: "$2,500,000",
-    image: "assets/service2.png",
-    preview: "assets/service2.png",
-  },
-];
-
 export default function Showcase() {
-  const [index, setIndex] = useState(0);
-  const current = highlightsData[index];
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      gsap.fromTo(
-        containerRef.current,
-        { autoAlpha: 0, x: 50 },
-        { autoAlpha: 1, x: 0, duration: 1, ease: "power3.out" }
-      );
-    }
-  }, [index]);
-
-  const nextSlide = () => {
-    setIndex((prev) => (prev + 1) % highlightsData.length);
-  };
-
-  const prevSlide = () => {
-    setIndex(
-      (prev) => (prev - 1 + highlightsData.length) % highlightsData.length
-    );
-  };
-
   return (
-    <div className="relative w-full min-h-screen bg-white flex flex-col justify-center items-center px-8 py-12 z-20">
-      <div className="flex flex-row w-full h-[100vh] justify-center items-center">
-        {/* Left Title */}
-        <div className="left-0 top-0 px-4 w-[12%] h-full justify-center items-center flex">
-          <div className="text-black text-[7rem] font-bold tracking-widest rotate-90 font-myfont">
-            HIGHLIGHTS
+    <section className="h-full min-h-screen flex flex-col justify-center items-center font-onest bg-white z-20 relative">
+
+      {/* Title */}
+      <div className="w-full flex items-end justify-center md:justify-between">
+        <h1 className=" text-[4rem] md:text-[10rem] leading-none">
+          HIGHLIGHTS
+        </h1>
+        <span className="text-[2rem] md:text-[4rem] md:mr-10">(06)</span>
+      </div>
+      {/* GRID — keeps your spacing + becomes responsive */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-[1800px]">
+        {/* 01 */}
+        <div className="p-8 md:p-0 w-full flex flex-col mb-10">
+          <div className="w-[700px] max-w-full">
+            <img
+              src="/assets/arki-1.jpg"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          <div className="flex justify-between w-[700px] max-w-full mt-2">
+            <span className="text-[1.2rem]">(01) Arki</span>
+            <span className="text-[1.2rem]">Arkitekno</span>
           </div>
         </div>
 
-        <div className="px-4 w-[100%] h-full justify-center items-center flex font-myfont">
-          {/*  Number */}
-
-          <div className="flex flex-col">
-            <h1 className="text-5xl font-thin tracking-widest mb-6 text-[10rem]">
-              {current.name}
-            </h1>
-            <div className="flex flex-col">
-              <div className="flex gap-6 text-lg mb-6 items-start justify-start">
-                <span className="text-[2rem]">{current.type}</span>
-              </div>
-              <div className="flex gap-6 text-lg mb-6 items-end justify-end">
-                <span className="text-[2rem]">{current.location}</span>
-              </div>
-              <div className="flex gap-6 text-lg mb-6 items-start justify-start">
-                <span className="text-[2rem]">{current.price}</span>
-              </div>
-            </div>
+        {/* 02 */}
+        <div className="p-8 md:p-0 w-full flex flex-col items-end mb-10">
+          <div className="w-[700px] max-w-full">
+            <img
+              src="/assets/casa-gu-1.jpg"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          <div className="flex justify-between w-[700px] max-w-full mt-2">
+            <span className="text-[1.2rem]">(02) CASA GU</span>
+            <span className="text-[1.2rem]">Estudio Eva</span>
           </div>
         </div>
 
-        <div className="p-8 w-[100%] h-full justify-center items-center flex">
-          <div
-            ref={containerRef}
-            className="w-[100%] items-start justify-start flex flex-col p-8"
-          >
-            <div className="relative group w-full">
-              <img
-                src={current.image}
-                alt={current.name}
-                className=" w-full
-                 h-[100%] object-contain "
-              />
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white text-3xl transition-all">
-                DETAILS →
-              </div>
-            </div>
+        {/* 03 */}
+        <div className="p-8 md:p-0 w-full flex flex-col mb-10">
+          <div className="w-[565px] h-[700px] max-w-full">
+            <img
+              src="/assets/menorca-1.jpg"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex justify-between w-[565px] max-w-full mt-2">
+            <span className="text-[1.2rem]">(03) MENORCA HOUSE</span>
+            <span className="text-[1.2rem]">OOAA</span>
+          </div>
+        </div>
 
-            <div className="flex items-center gap-4 mt-6">
-              <img
-                src={current.preview}
-                alt="preview"
-                className="w-[50%] h-full object-contain"
-              />
+        {/* 04 */}
+        <div className="p-8 md:p-0 w-full flex flex-col items-end mb-10">
+          <div className="w-[700px] max-w-full">
+            <img
+              src="/assets/villa-1.jpg"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          <div className="flex justify-between w-[700px] max-w-full mt-2">
+            <span className="text-[1.2rem]">(04) VILLA K</span>
+            <span className="text-[1.2rem]">Estudio Eva</span>
+          </div>
+        </div>
 
-              <button
-                onClick={prevSlide}
-                className="w-12 h-12 rounded-full border flex items-center justify-center hover:bg-black hover:text-white transition"
-              >
-                <ArrowLeft />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="w-12 h-12 rounded-full border flex items-center justify-center hover:bg-black hover:text-white transition"
-              >
-                <ArrowRight />
-              </button>
-            </div>
+        {/* 05 */}
+        <div className="p-8 md:p-0 w-full flex flex-col mb-10">
+          <div className="w-[500px] max-w-full">
+            <img
+              src="/assets/lunaya-1.jpg"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          <div className="flex justify-between w-[500px] max-w-full mt-2">
+            <span className="text-[1.2rem]">(05) VILLAS LUNAYA</span>
+            <span className="text-[1.2rem]">Fabian Martinez</span>
+          </div>
+        </div>
+
+        {/* 06 */}
+        <div className="p-8 md:p-0 w-full flex flex-col items-end mb-10">
+          <div className="w-[700px] max-w-full">
+            <img
+              src="/assets/wabi-sabi-1.jpg"
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          <div className="flex justify-between w-[700px] max-w-full mt-2">
+            <span className="text-[1.2rem]">(06) WABI SABI</span>
+            <span className="text-[1.2rem]">BAPTISTE BOHU</span>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
