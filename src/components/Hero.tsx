@@ -70,8 +70,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-black/40 z-[1]" />
 
         {/* HERO CONTENT - FIXED AT BOTTOM */}
-        <div className="absolute bottom-24 left-12 z-[2] pointer-events-none">
-          <p className="text-[2rem] font-onest text-white w-[55%] leading-relaxed drop-shadow-lg">
+        <div className="absolute left-4 bottom-10 md:bottom-24 md:left-12 z-[2] pointer-events-none">
+          <p className="text-[1.2rem] md:text-[2rem] font-onest text-white w-[55%] leading-relaxed drop-shadow-lg">
             Discover the art behind the structures — explore ARC-TECH and
             experience architecture where aesthetics meet history.
           </p>
