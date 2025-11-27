@@ -16,14 +16,135 @@
   font-style: normal;
 }
 
-body {
-  scroll-behavior: smooth;
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
+}
+
+body {
+  scroll-behavior: smooth;
+  /* Prevent horizontal overflow */
+  overflow-x: hidden;
+  /* Ensure full viewport usage */
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Root container fix for React apps */
+#root {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Hero background - mobile optimization */
 .hero {
   background-image: url("/assets/home-bg-2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  /* Remove fixed attachment on mobile for better performance */
+  background-attachment: scroll;
+}
+
+/* Fixed attachment only on larger screens */
+@media (min-width: 768px) {
+  .hero {
+    background-attachment: fixed;
+  }
+}
+
+/* Prevent text overflow issues */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Smooth scrolling with offset for fixed header */
+@layer utilities {
+  .scroll-mt-20 {
+    scroll-margin-top: 5rem;
+  }
+
+  .scroll-mt-24 {
+    scroll-margin-top: 6rem;
+  }
+}
+
+/* Custom scrollbar styling (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Prevent layout shift from scrollbar */
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Mobile menu overflow fix */
+@media (max-width: 767px) {
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+}
+
+/* Responsive image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Smooth transitions for all interactive elements */
+button,
+a {
+  transition: all 0.3s ease;
+}
+
+/* Prevent zoom on input focus (iOS) */
+@media (max-width: 767px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Safe area padding for notched devices */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(0px, env(safe-area-inset-left));
+    padding-right: max(0px, env(safe-area-inset-right));
+  }
 }

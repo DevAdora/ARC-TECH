@@ -1,7 +1,6 @@
 export default function Showcase() {
   return (
     <section className="h-full min-h-screen flex flex-col justify-center items-center font-onest bg-white z-20 relative">
-
       {/* Title */}
       <div className="w-full flex items-end justify-center md:justify-between">
         <h1 className=" text-[4rem] md:text-[10rem] leading-none">
@@ -9,8 +8,8 @@ export default function Showcase() {
         </h1>
         <span className="text-[2rem] md:text-[4rem] md:mr-10">(06)</span>
       </div>
-      {/* GRID — keeps your spacing + becomes responsive */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-[1800px]">
+      {/* GRID â€” keeps your spacing + becomes responsive */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-[2200px] ">
         {/* 01 */}
         <div className="p-8 md:p-0 w-full flex flex-col mb-10">
           <div className="w-[700px] max-w-full">

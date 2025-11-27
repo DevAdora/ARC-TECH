@@ -1,4 +1,3 @@
-// Hero.tsx
 "use client";
 
 import { useRef, useEffect } from "react";
@@ -7,8 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Hero Component
-// Hero Component
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement | null>(null);
   const bgRef = useRef<HTMLDivElement | null>(null);
@@ -16,6 +13,8 @@ export default function Hero() {
   useEffect(() => {
     const hero = heroRef.current;
     const bg = bgRef.current;
+
+    if (!hero || !bg) return;
 
     // Parallax Background - moves slower than scroll
     gsap.to(bg, {
@@ -34,18 +33,19 @@ export default function Hero() {
       trigger: ".trigger-spacer",
       start: "bottom bottom",
       onEnter: () => {
-        if (hero) {
-          hero.style.visibility = "hidden";
-          hero.style.opacity = "0";
-        }
+        hero.style.visibility = "hidden";
+        hero.style.opacity = "0";
       },
       onLeaveBack: () => {
-        if (hero) {
-          hero.style.visibility = "visible";
-          hero.style.opacity = "1";
-        }
+        hero.style.visibility = "visible";
+        hero.style.opacity = "1";
       },
     });
+
+    // Cleanup
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
@@ -69,16 +69,15 @@ export default function Hero() {
         {/* BLACK OVERLAY */}
         <div className="absolute inset-0 bg-black/40 z-[1]" />
 
-        {/* HERO CONTENT - FIXED AT BOTTOM */}
-        <div className="absolute left-4 bottom-10 md:bottom-24 md:left-12 z-[2] pointer-events-none">
-          <p className="text-[1.2rem] md:text-[2rem] font-onest text-white w-[55%] leading-relaxed drop-shadow-lg">
+        {/* HERO CONTENT - RESPONSIVE POSITIONING */}
+        <div className="absolute left-4 right-4 bottom-40 sm:bottom-16 md:bottom-16 lg:bottom-24 sm:left-16 md:left-8 lg:left-12 z-[2] pointer-events-none">
+          <p className="text-[1.6rem] sm:text-[1.6rem] md:text-[2rem] font-onest text-white max-w-full sm:max-w-[70%] md:max-w-[40%] lg:max-w-[40%] leading-relaxed drop-shadow-lg">
             Discover the art behind the structures — explore ARC-TECH and
             experience architecture where aesthetics meet history.
           </p>
         </div>
       </section>
 
-      {/* SPACER TO ENABLE SCROLLING */}
       <div className="trigger-spacer h-screen w-full relative z-[0]" />
     </>
   );

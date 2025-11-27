@@ -54,7 +54,7 @@ export default function Header() {
 
             {/* Desktop Navigation - Hidden on mobile */}
             <nav className="font-sans hidden md:block">
-              <ul className="flex space-x-6 text-[1.1rem]">
+              <ul className="flex space-x-6 text-[1.4rem]">
                 {navItems.map((item, i) => (
                   <li key={i}>
                     <ScrambleText label={item.name} />
@@ -74,7 +74,7 @@ export default function Header() {
       )}
 
       {/* Top-right container - Visible when scrolled or on mobile */}
-      <div className=" fixed top-6 right-10 flex items-center space-x-4 z-50  ">
+      <div className=" fixed top-6 right-3 flex items-center space-x-4 z-50  ">
         <div
           className={`flex items-center space-x-4 transition-all duration-300 justify-center ${
             isScrolled || isMobile
