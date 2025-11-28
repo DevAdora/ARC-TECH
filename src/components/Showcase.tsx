@@ -18,9 +18,9 @@ export default function Showcase() {
               className="w-full h-auto object-cover"
             />
           </div>
-          <div className="flex justify-between w-[700px] max-w-full mt-2">
-            <span className="text-[1.2rem]">(01) Arki</span>
-            <span className="text-[1.2rem]">Arkitekno</span>
+          <div className="flex justify-between w-[700px] max-w-full mt-2 font-onestsemibold">
+            <span className="text-[1.4rem]">(01) Arki</span>
+            <span className="text-[1.4rem]">Arkitekno</span>
           </div>
         </div>
 
@@ -32,9 +32,9 @@ export default function Showcase() {
               className="w-full h-auto object-cover"
             />
           </div>
-          <div className="flex justify-between w-[700px] max-w-full mt-2">
-            <span className="text-[1.2rem]">(02) CASA GU</span>
-            <span className="text-[1.2rem]">Estudio Eva</span>
+          <div className="flex justify-between w-[700px] max-w-full mt-2 font-onestsemibold">
+            <span className="text-[1.4rem]">(02) CASA GU</span>
+            <span className="text-[1.4rem]">Estudio Eva</span>
           </div>
         </div>
 
@@ -46,9 +46,9 @@ export default function Showcase() {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="flex justify-between w-[565px] md:w-full max-w-full mt-2">
-            <span className="text-[1.2rem]">(03) MENORCA HOUSE</span>
-            <span className="text-[1.2rem]">OOAA</span>
+          <div className="flex justify-between w-[565px] md:w-full max-w-full mt-2 font-onestsemibold">
+            <span className="text-[1.4rem]">(03) MENORCA HOUSE</span>
+            <span className="text-[1.4rem]">OOAA</span>
           </div>
         </div>
 
@@ -60,9 +60,9 @@ export default function Showcase() {
               className="w-full h-auto object-cover"
             />
           </div>
-          <div className="flex justify-between w-[700px] max-w-full mt-2">
-            <span className="text-[1.2rem]">(04) VILLA K</span>
-            <span className="text-[1.2rem]">Estudio Eva</span>
+          <div className="flex justify-between w-[700px] max-w-full mt-2 font-onestsemibold">
+            <span className="text-[1.4rem]">(04) VILLA K</span>
+            <span className="text-[1.4rem]">Estudio Eva</span>
           </div>
         </div>
 
@@ -74,9 +74,9 @@ export default function Showcase() {
               className="w-full h-auto object-cover"
             />
           </div>
-          <div className="flex justify-between w-[500px] max-w-full mt-2">
-            <span className="text-[1.2rem]">(05) VILLAS LUNAYA</span>
-            <span className="text-[1.2rem]">Fabian Martinez</span>
+          <div className="flex justify-between w-[500px] max-w-full mt-2 font-onestsemibold">
+            <span className="text-[1.4rem]">(05) VILLAS LUNAYA</span>
+            <span className="text-[1.4rem]">Fabian Martinez</span>
           </div>
         </div>
 
@@ -88,9 +88,9 @@ export default function Showcase() {
               className="w-full h-auto object-cover"
             />
           </div>
-          <div className="flex justify-between w-[700px] md:w-full max-w-full mt-2">
-            <span className="text-[1.2rem]">(06) WABI SABI</span>
-            <span className="text-[1.2rem]">BAPTISTE BOHU</span>
+          <div className="flex justify-between w-[700px] md:w-full max-w-full mt-2 font-onestsemibold">
+            <span className="text-[1.4rem]">(06) WABI SABI</span>
+            <span className="text-[1.4rem]">BAPTISTE BOHU</span>
           </div>
         </div>
       </div>

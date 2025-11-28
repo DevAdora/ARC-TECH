@@ -16,6 +16,18 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Onest-Bold";
+  src: url("/fonts/Onest-Bold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Onest-Semibold";
+  src: url("/fonts/Onest-SemiBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
 /* Base styles */
 * {
   margin: 0;

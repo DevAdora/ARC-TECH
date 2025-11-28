@@ -6,6 +6,10 @@ import Hero from "./components/Hero";
 import Showcase from "./components/Showcase";
 import Header from "./components/Header";
 import Services from "./components/Services";
+import About from "./components/About";
+import Feedback from "./components/Feedback";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -108,6 +112,10 @@ export default function App() {
         <Hero />
         <Services />
         <Showcase />
+        <About />
+        <Feedback />
+        <Contact />
+        <Footer />
       </div>
 
       <div
