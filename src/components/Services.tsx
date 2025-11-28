@@ -41,8 +41,8 @@ export default function Services() {
     >
       {/* Main Heading */}
       <div className="font-onest text-start justify-start flex w-full p-4 w-full">
-        <h1 className="text-[4rem] md:text-[9rem] lg:text-[10rem] xl:text-[10rem] 2xl:text-[11rem] leading-[50px] sm:leading-[50px] md:leading-[50px] lg:leading-[1.15] xl:leading-[140px]">
-          EXPERIENCE ARCHITECTURE — TECHNOLOGY
+        <h1 className="text-[3rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] 2xl:text-[11rem] leading-[40px] sm:leading-[60px] md:leading-[80px] lg:leading-[100px] xl:leading-[120px] 2xl:leading-[130px]">
+          EXPERIENCE ARCHITECTURE TECHNOLOGY — 
         </h1>
       </div>
 
@@ -66,7 +66,7 @@ export default function Services() {
 
           {/* Right Column - Content */}
           <div className="w-full flex flex-col pr-2 sm:pr-3 md:pr-4">
-            <h3 className="font-semibold text-[1.2rem] md:[1.8rem] lg:text-[2rem]  leading-[20px] md:leading-[30px]">
+            <h3 className="font-semibold text-[1rem] md:text-[1.8rem] lg:text-[2rem]  leading-[20px] md:leading-[30px]">
               ARC-TECH provides a digital platform dedicated to exploring and
               presenting the world of architecture. It delivers carefully
               curated content that blends aesthetic appeal with factual
@@ -74,7 +74,7 @@ export default function Services() {
               principles from around the globe.
             </h3>
 
-            <span className="font-semibold text-[1.2rem] md:text-[1.8rem] lg:text-[2rem] leading-[20px] md:leading-[30px] py-2 sm:py-3 md:py-4">
+            <span className="font-semibold text-[1rem] md:text-[1.8rem] lg:text-[2rem] leading-[20px] md:leading-[30px] py-2 sm:py-3 md:py-4">
               By combining modern web technologies with compelling visual
               storytelling, ARC-TECH offers users an immersive educational
               experience—allowing enthusiasts, students, and professionals to

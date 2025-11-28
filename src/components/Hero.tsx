@@ -71,7 +71,7 @@ export default function Hero() {
 
         {/* HERO CONTENT - RESPONSIVE POSITIONING */}
         <div className="absolute left-4 right-4 bottom-40 sm:bottom-16 md:bottom-16 lg:bottom-24 sm:left-16 md:left-8 lg:left-12 z-[2] pointer-events-none">
-          <p className="text-[1.6rem] sm:text-[1.6rem] md:text-[2rem] font-onest text-white max-w-full sm:max-w-[70%] md:max-w-[40%] lg:max-w-[40%] leading-relaxed drop-shadow-lg">
+          <p className="text-[1.6rem] sm:text-[1.6rem] md:text-[2rem] font-onest text-white max-w-full sm:max-w-[70%] md:max-w-[50%] lg:max-w-[50%] leading-relaxed drop-shadow-lg">
             Discover the art behind the structures — explore ARC-TECH and
             experience architecture where aesthetics meet history.
           </p>
