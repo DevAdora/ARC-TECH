@@ -102,13 +102,13 @@ export default function Footer() {
         <div className="font-onestsemibold ">
           <h3 className="text-[0.8rem]  md:text-[1.4rem]"> INSTAGRAM</h3>
         </div>
-        <div className="absolute bottom-10 right-10 md:bottom-0 md:right-0 flex md:relative md:justify-end md:items-end">
+        <div className="absolute bottom-5 right-5 md:bottom-0 md:right-0 flex md:relative md:justify-end md:items-end">
           <button onClick={scrollToTop} aria-label="Scroll to top">
             <motion.a
               href="#"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="py-2 text-[1.4rem] tracking-wide border-b border-black font-onestsemibold"
+              className="md:py-2 text-[1rem] md:text-[1.4rem] tracking-wide border-b border-black font-onestsemibold"
             >
               BACK TO TOP ↑
             </motion.a>{" "}
