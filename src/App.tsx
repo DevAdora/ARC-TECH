@@ -126,7 +126,7 @@ export default function App() {
           clipPath: "circle(10% at 50% 50%)",
         }}
       >
-        <div className="absolute inset-0 bg-[url('/assets/Home-bg.jpg')] bg-no-repeat bg-cover bg-center h-screen w-full">
+        <div className="absolute inset-0 bg-[url('/assets/home-bg-3.jpg')] bg-no-repeat bg-cover bg-center h-screen w-full">
           <div className="absolute inset-0 bg-black/40 z-[1]" />
 
           <div className="absolute inset-0 flex items-center justify-center">

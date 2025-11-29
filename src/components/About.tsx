@@ -13,7 +13,7 @@ export default function About() {
         >
           {/* LEFT COLUMN */}
           <div className="md:p-8 w-full font-onestsemibold flex flex-col items-start">
-            <h2 className="text-[1.8rem] md:text-[2rem] mb-4">
+            <h2 className="w-full text-left tracking-[-1px] text-[1rem] md:text-[2rem] mb-4">
               (ABOUT ARC-TECH)
             </h2>
 
@@ -52,17 +52,17 @@ export default function About() {
           </div>
 
           {/* RIGHT COLUMN */}
-          <div className="p-4 md:p-8 w-full">
+          <div className="md:p-4 md:p-8 w-full">
             <h2
               className="
-              text-[2rem]
+              text-[1.8rem]
               md:text-[3rem]
               lg:text-[5.5rem]
-              indent-20
               md:indent-20
-              leading-[35px]
+              leading-[30px]
               md:leading-[80px]
-              font-onestsemibold
+              md:font-onestsemibold
+              font-onest
             "
             >
               ARC-TECH provides a digital platform dedicated to exploring and
@@ -74,7 +74,7 @@ export default function About() {
 
             {/* CTA Button */}
             <div className="mt-10 font-onest">
-              <a className="py-4 md:py-6 px-6 md:px-4 bg-[#080807] text-white rounded-full text-[1.2rem]">
+              <a className="py-2 md:py-6 px-4 md:px-4 bg-[#080807] text-white rounded-full md:text-[1.2rem]">
                 GET TO KNOW OUR PROCESS ◉
               </a>
             </div>

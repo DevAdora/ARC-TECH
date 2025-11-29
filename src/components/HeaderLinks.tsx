@@ -54,8 +54,8 @@ export default function ScrambleText({
       onMouseEnter={triggerScramble}
       className={`font-onest cursor-pointer transition-colors relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
         isLight
-          ? "hover:text-gray-300 after:bg-white"
-          : "hover:text-gray-950 after:bg-black"
+          ? "hover:text-white after:bg-white  after:bottom-[-10px]"
+          : "hover:text-white after:bg-white"
       }`}
     >
       {textValue}
