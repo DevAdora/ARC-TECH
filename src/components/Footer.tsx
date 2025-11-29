@@ -64,7 +64,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className="h-full w-full order-2 md:order-3 justify-start items-start grid grid-cols gap-10 md:grid-rows-[60%_40%]">
-          <div className="w-full md:w-[80%] text-left leading-[30px]">
+          <div className="w-full md:w-[80%] text-left leading-[30px] font-onest  md:font-onestsemibold ">
             <p className="text-[1rem] md:text-[1.4rem] md:text-[1.6rem]">
               (ACKNOWLEDGEMENT)
             </p>
@@ -79,7 +79,7 @@ export default function Footer() {
               opportunity to contribute to this vibrant community.
             </span>
           </div>
-          <div className="text-left text-[1rem] md:text-[1.4rem] md:text-[1.6rem] md:font-onestsemibold leading-[30px]">
+          <div className="text-left text-[1rem] md:text-[1.4rem] md:text-[1.6rem] font-onest md:font-onestsemibold leading-[30px]">
             <h1>(INFO)</h1>
             <p>ADDRESS: COSMOS</p>
             <p>EMAIL: oh.cosmos@gmail.com</p>
