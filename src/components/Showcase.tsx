@@ -3,15 +3,17 @@ export default function Showcase() {
     <section className="h-full min-h-screen flex flex-col justify-center items-center font-onest bg-white z-20 relative py-10">
       {/* Title */}
       <div className="w-full flex items-end justify-center md:justify-between">
-        <h1 className=" text-[3.5rem] sm:text-[6rem] md:text-[8rem] lg:text-[9rem] xl:text-[12rem] leading-none">
-          HIGHLIGHTS
+        <h1 className="px-4 md:p-0 text-[3.2rem] sm:text-[6rem] md:text-[8rem] lg:text-[9rem] xl:text-[12rem] leading-none">
+          HIGHLIGHT WORKS
         </h1>
-        <span className="text-[2rem] md:text-[4rem] md:mr-10">(06)</span>
+        <span className="text-[2rem] md:text-[4rem] md:mr-10 px-4 md:p-0">
+          (06)
+        </span>
       </div>
       {/* GRID â€” keeps your spacing + becomes responsive */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-[2200px] ">
         {/* 01 */}
-        <div className="p-8 md:p-0 w-full flex flex-col mb-10">
+        <div className="p-4 md:p-0 w-full flex flex-col mb-10">
           <div className="w-[700px] max-w-full">
             <img
               src="/assets/arki-1.jpg"
@@ -25,7 +27,7 @@ export default function Showcase() {
         </div>
 
         {/* 02 */}
-        <div className="p-8 md:p-0 w-full flex flex-col items-end mb-10">
+        <div className="p-4 md:p-0 w-full flex flex-col items-end mb-10">
           <div className="w-[700px] max-w-full">
             <img
               src="/assets/casa-gu-1.jpg"
@@ -39,7 +41,7 @@ export default function Showcase() {
         </div>
 
         {/* 03 */}
-        <div className="p-8 md:p-0 w-full flex flex-col mb-10">
+        <div className="p-4 md:p-0 w-full flex flex-col mb-10">
           <div className="w-[565px] md:w-full h-[700px] max-w-full">
             <img
               src="/assets/menorca-1.jpg"
@@ -53,7 +55,7 @@ export default function Showcase() {
         </div>
 
         {/* 04 */}
-        <div className="p-8 md:p-0 w-full flex flex-col items-end mb-10">
+        <div className="p-4 md:p-0 w-full flex flex-col items-end mb-10">
           <div className="w-[700px] max-w-full">
             <img
               src="/assets/villa-1.jpg"
@@ -67,7 +69,7 @@ export default function Showcase() {
         </div>
 
         {/* 05 */}
-        <div className="p-8 md:p-0 w-full flex flex-col mb-10">
+        <div className="p-4 md:p-0 w-full flex flex-col mb-10">
           <div className="w-[500px] max-w-full">
             <img
               src="/assets/lunaya-1.jpg"
@@ -81,7 +83,7 @@ export default function Showcase() {
         </div>
 
         {/* 06 */}
-        <div className="p-8 md:p-0 w-full flex flex-col items-end mb-10">
+        <div className="p-4 md:p-0 w-full flex flex-col items-end mb-10">
           <div className="w-[700px] md:w-full max-w-full">
             <img
               src="/assets/wabi-sabi-1.jpg"

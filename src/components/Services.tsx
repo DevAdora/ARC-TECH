@@ -40,15 +40,13 @@ export default function Services() {
       className="relative w-full min-h-screen bg-white flex flex-col justify-center items-center px-4 z-20 shadow-2xl font-onest"
     >
       {/* Main Heading */}
-      <div className="font-onest text-start justify-start flex w-full p-4 w-full">
-        <h1 className="text-[3rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] 2xl:text-[11rem] leading-[40px] sm:leading-[60px] md:leading-[80px] lg:leading-[100px] xl:leading-[120px] 2xl:leading-[130px]">
-          EXPERIENCE ARCHITECTURE TECHNOLOGY — 
+      <div className="font-onest md:text-start justify-start flex w-full px-3 py-2 md:p-4 w-full">
+        <h1 className="text-[2.8rem] sm:text-[5rem] md:text-[6rem] lg:text-[8rem] xl:text-[10rem] 2xl:text-[11rem] leading-[40px] sm:leading-[60px] md:leading-[80px] lg:leading-[100px] xl:leading-[120px] 2xl:leading-[130px]">
+          EXPERIENCE ARCHITECTURE TECHNOLOGY —
         </h1>
       </div>
 
-      {/* Content Container */}
       <div className="row justify-center items-center row-cols-2 w-full max-w-[1400px] p-3 sm:p-4 md:p-5">
-        {/* Image - with responsive padding */}
         <div className="w-full mb-4 sm:mb-6 px-4 sm:px-6 md:px-0">
           <img
             src="/assets/home-bg-1.jpg"
@@ -57,14 +55,11 @@ export default function Services() {
           />
         </div>
 
-        {/* Text Content Grid - MAINTAINS GRID STRUCTURE */}
-        <div className="w-full grid grid-cols-[30%_70%] sm:grid-cols-[28%_72%] md:grid-cols-[27.6%_72.5%] gap-2 sm:gap-3 md:gap-4 items-start px-4 sm:px-6 md:px-0">
-          {/* Left Column - Label (ARC-TECH) */}
-          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[2rem] font-onest leading-tight flex items-start py-2 md:py-4">
+        <div className="w-full grid grid-cols-[25%_75%] sm:grid-cols-[25%_75%] md:grid-cols-[27.6%_72.5%] gap-2 sm:gap-3 md:gap-4 items-start px-4 sm:px-6 md:px-0">
+          <div className="text-[0.8rem] sm:text-xl md:text-2xl lg:text-3xl xl:text-[2rem] font-onestsemibold leading-tight flex items-start md:py-4">
             <span>(ARC-TECH)</span>
           </div>
 
-          {/* Right Column - Content */}
           <div className="w-full flex flex-col pr-2 sm:pr-3 md:pr-4">
             <h3 className="font-semibold text-[1rem] md:text-[1.8rem] lg:text-[2rem]  leading-[20px] md:leading-[30px]">
               ARC-TECH provides a digital platform dedicated to exploring and

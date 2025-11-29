@@ -16,8 +16,8 @@ export default function Feedback() {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center font-onest leading-relaxed"
           >
-            <h2 className="text-[1.8rem] md:text-[2rem] mb-4 font-onestsemibold">
-              (HEAR WHAT THE OTHERS SAYS ABOUT US)
+            <h2 className="text-[1rem] md:text-[2rem] mb-4 font-onestsemibold">
+              (HEAR FROM OTHERS)
             </h2>
 
             <img
@@ -26,21 +26,21 @@ export default function Feedback() {
               className="w-full max-w-[800px] h-auto md:h-[600px] object-cover  mb-6"
             />
 
-            <p className="text-lg md:text-[1.4rem] mb-4 w-[90%]">
+            <p className="text-lg md:text-[1.4rem] mb-4 w-[90%] leading-[20px]">
               “ARC-TECH elevated the entire architectural journey for our
               project. Their ability to visually communicate form, texture, and
               ambience made it easier for us to understand the essence of each
               design decision.
             </p>
 
-            <p className="text-lg md:text-[1.4rem] mb-4 w-[90%]">
+            <p className="text-lg md:text-[1.4rem] mb-4 w-[90%] leading-[20px]">
               Every detail is curated with precision. The platform does not just
               display architecture — it tells a story. The combination of
               visuals and clear explanations helped us gain confidence in our
               direction.
             </p>
 
-            <p className="text-lg md:text-[1.4rem] mb-6 w-[90%]">
+            <p className="text-lg md:text-[1.4rem] mb-6 w-[90%] leading-[20px]">
               We were impressed with how immersive and informative the
               experience was. ARC-TECH truly bridges the gap between concept and
               clarity.”
