@@ -86,8 +86,8 @@ export default function Feedback() {
             {/* CREDITS + VIEW PROJECT */}
             <div className="mt-4 flex justify-between items-center font-onestsemibold">
               <div>
-                <span className="block text-[1.4rem]">Martelaar</span>
-                <span className="text-gray-600 text-[1.2rem]">
+                <span className="block text-[1rem] md:text-[1.4rem]">Martelaar</span>
+                <span className="text-gray-600 text-[0.8rem] md:text-[1.2rem]">
                   Machteld D'Hollander
                 </span>
               </div>
@@ -96,7 +96,7 @@ export default function Feedback() {
                 href="#"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
-                className="py-2 text-[1.4rem] tracking-wide border-b border-black "
+                className="md:py-2 text-[1rem] md:text-[1.4rem] tracking-wide border-b border-black "
               >
                 View Project
               </motion.a>
