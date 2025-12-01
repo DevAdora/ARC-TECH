@@ -1,3 +1,4 @@
+import { Link, useLocation } from "react-router-dom";
 import ScrambleText from "./HeaderLinks";
 import { useEffect, useState } from "react";
 
@@ -13,6 +14,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const checkMobile = () => {
@@ -47,17 +49,23 @@ export default function Header() {
     <>
       {/* Main Header - Only visible when NOT scrolled */}
       {!isScrolled && (
-        <header className="absolute top-0 left-0 w-full z-30 px-8 py-4  font-onest">
+        <header className="absolute top-0 left-0 w-full z-30 px-8 py-4 font-onest">
           <div className="flex justify-between items-center text-white">
             {/* Logo */}
-            <h1 className="font-bold text-[2.8rem]">A</h1>
+            <Link to="/">
+              <h1 className="font-bold text-[2.8rem] cursor-pointer hover:opacity-80 transition">
+                A
+              </h1>
+            </Link>
 
             {/* Desktop Navigation - Hidden on mobile */}
             <nav className="font-onest hidden md:block">
               <ul className="flex space-x-6 text-[1.2rem]">
                 {navItems.map((item, i) => (
                   <li key={i}>
-                    <ScrambleText label={item.name} variant="light" />
+                    <Link to={item.path}>
+                      <ScrambleText label={item.name} variant="light" />
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -65,16 +73,18 @@ export default function Header() {
 
             {/* Desktop CTA - Hidden on mobile */}
             <div className="hidden md:flex gap-4 font-sans">
-              <button className="uppercase bg-white text-black px-5 py-2 rounded-md hover:bg-gray-200 transition font-onest">
-                Get in Touch →
-              </button>
+              <Link to="/contact">
+                <button className="uppercase bg-white text-black px-5 py-2 rounded-md hover:bg-gray-200 transition font-onest">
+                  Get in Touch →
+                </button>
+              </Link>
             </div>
           </div>
         </header>
       )}
 
       {/* Top-right container - Visible when scrolled or on mobile */}
-      <div className=" fixed top-6 right-3 flex items-center space-x-4 z-50  ">
+      <div className="fixed top-6 right-3 flex items-center space-x-4 z-50">
         <div
           className={`flex items-center space-x-4 transition-all duration-300 justify-center ${
             isScrolled || isMobile
@@ -83,9 +93,11 @@ export default function Header() {
           }`}
         >
           {/* Get in Touch Button */}
-          <button className="uppercase bg-[#080807] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition font-onest">
-            Get in Touch →
-          </button>
+          <Link to="/contact">
+            <button className="uppercase bg-[#080807] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition font-onest">
+              Get in Touch →
+            </button>
+          </Link>
 
           {/* Menu Button */}
           <button
@@ -102,7 +114,7 @@ export default function Header() {
       <>
         {/* Backdrop */}
         <div
-          className={`fixed inset-0 bg-black/50 z-40 transition-all duration-500 ease-in-out  ${
+          className={`fixed inset-0 bg-black/50 z-40 transition-all duration-500 ease-in-out ${
             isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
           onClick={closeMobileMenu}
@@ -135,9 +147,9 @@ export default function Header() {
             {/* Navigation Links */}
             <nav className="flex flex-col space-y-6 flex-1 justify-center font-onest">
               {navItems.map((item, i) => (
-                <a
+                <Link
                   key={i}
-                  href={item.path}
+                  to={item.path}
                   onClick={closeMobileMenu}
                   className={`text-[4rem] uppercase md:text-[3.5rem] text-[#f0ede4] transition-all duration-500 pb-1 ease-out leading-[40px] transform ${
                     isMobileMenuOpen
@@ -149,19 +161,9 @@ export default function Header() {
                   }}
                 >
                   <ScrambleText label={item.name} />
-                </a>
+                </Link>
               ))}
             </nav>
-
-            {/* Footer text in menu */}
-            <div
-              className={`mt-auto transform transition-all duration-500 ease-out ${
-                isMobileMenuOpen
-                  ? "translate-y-0 opacity-70"
-                  : "translate-y-4 opacity-0"
-              }`}
-              style={{ transitionDelay: "400ms" }}
-            ></div>
           </div>
         </div>
       </>

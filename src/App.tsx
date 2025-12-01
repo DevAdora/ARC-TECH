@@ -12,6 +12,10 @@ import Feedback from "./components/Feedback";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ProjectDetails from "./pages/ProjectDetails";
+import ShowcasePage from "./pages/Showcase/Showcase";
+import ServicesPage from "./pages/Services/Services";
+import AboutPage from "./pages/About/About";
+import ContactPage from "./pages/Contact/Contact";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -129,7 +133,7 @@ function HomePage() {
         }}
       >
         <div className="absolute inset-0 bg-[url('/assets/home-bg-3.jpg')] bg-no-repeat bg-cover bg-center h-screen w-full">
-          <div className="absolute inset-0 bg-black/40 z-[1]" />
+          <div className="absolute inset-0 bg-black/20 z-[1]" />
 
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center text-white">
@@ -162,6 +166,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/project/:id" element={<ProjectDetails />} />
+        <Route path="/showcase" element={<ShowcasePage />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </BrowserRouter>
   );
