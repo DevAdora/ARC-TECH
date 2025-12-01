@@ -16,7 +16,7 @@ export default function Feedback() {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center font-onest leading-relaxed"
           >
-            <h2 className="text-[1rem] md:text-[2rem] mb-4 font-onestsemibold">
+            <h2 className="text-[1rem] md:text-[1.5rem] mb-4 font-onestsemibold">
               (HEAR FROM OTHERS)
             </h2>
 
@@ -96,7 +96,7 @@ export default function Feedback() {
                 href="#"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.97 }}
-                className="md:py-2 text-[1rem] md:text-[1.4rem] tracking-wide border-b border-black "
+                className="text-[1rem] md:text-[1.4rem] tracking-wide border-b border-black "
               >
                 View Project
               </motion.a>

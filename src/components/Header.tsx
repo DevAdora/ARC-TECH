@@ -53,8 +53,8 @@ export default function Header() {
             <h1 className="font-bold text-[2.8rem]">A</h1>
 
             {/* Desktop Navigation - Hidden on mobile */}
-            <nav className="font-sans hidden md:block">
-              <ul className="flex space-x-6 text-[1.4rem]">
+            <nav className="hidden md:block">
+              <ul className="flex space-x-6 text-[1.2rem]">
                 {navItems.map((item, i) => (
                   <li key={i}>
                     <ScrambleText label={item.name} />

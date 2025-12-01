@@ -3,7 +3,7 @@ export default function Showcase() {
     <section className="h-full min-h-screen flex flex-col justify-center items-center font-onest bg-white z-20 relative py-10">
       {/* Title */}
       <div className="w-full flex items-end justify-center md:justify-between">
-        <h1 className="px-4 md:p-0 text-[3.2rem] sm:text-[6rem] md:text-[8rem] lg:text-[9rem] xl:text-[12rem] leading-none">
+        <h1 className="px-4 md:p-0 text-[3.2rem] sm:text-[6rem] md:text-[8rem] lg:text-[9rem] xl:text-[12rem] md:leading-[140px]">
           HIGHLIGHT WORKS
         </h1>
         <span className="text-[2rem] md:text-[4rem] md:mr-10 px-4 md:p-0">

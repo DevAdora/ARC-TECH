@@ -29,8 +29,8 @@ export default function Footer() {
     <section className="min-h-screen h-full flex flex-col justify-center items-center bg-white z-20 relative border-t border-gray-450">
       <div className="grid md:grid-cols-3 gap-10 text-left md:text-center font-onestsemibold w-full h-full p-4 md:p-10">
         <div className="order-3 md:order-1 max-w-[600px]">
-          <img src="/assets/Featured-1.jpg" className="w-[600px] h-auto" />
-          <h1 className="text-left md:text-center text-[4rem] md:text-[7.6rem] tracking-[-5px] max-w-full">
+          <img src="/assets/Featured-2.jpg" className="w-[600px] h-[600px]" />
+          <h1 className="text-left md:text-center text-[4rem] md:text-[7.4rem] tracking-[-5px] max-w-full">
             ARC-TECH
           </h1>
         </div>
@@ -64,7 +64,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className="h-full w-full order-2 md:order-3 justify-start items-start grid grid-cols gap-10 md:grid-rows-[60%_40%]">
-          <div className="w-full md:w-[80%] text-left leading-[30px] font-onest  md:font-onestsemibold ">
+          <div className="w-full md:w-[80%] text-left leading-[30px] font-onestsemibold ">
             <p className="text-[1rem] md:text-[1.4rem] md:text-[1.6rem]">
               (ACKNOWLEDGEMENT)
             </p>
@@ -108,7 +108,7 @@ export default function Footer() {
               href="#"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="md:py-2 text-[1rem] md:text-[1.4rem] tracking-wide border-b border-black font-onestsemibold"
+              className="text-[1rem] md:text-[1.4rem] tracking-wide border-b border-black font-onestsemibold"
             >
               BACK TO TOP ↑
             </motion.a>{" "}

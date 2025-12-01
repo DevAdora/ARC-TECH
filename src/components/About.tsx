@@ -13,7 +13,7 @@ export default function About() {
         >
           {/* LEFT COLUMN */}
           <div className="md:p-8 w-full font-onestsemibold flex flex-col items-start">
-            <h2 className="w-full text-left tracking-[-1px] text-[1rem] md:text-[2rem] mb-4">
+            <h2 className="w-full text-left tracking-[-1px] text-[1rem] md:text-[1.5rem] mb-4">
               (ABOUT ARC-TECH)
             </h2>
 
@@ -57,10 +57,10 @@ export default function About() {
               className="
               text-[1.8rem]
               md:text-[3rem]
-              lg:text-[5.5rem]
+              lg:text-[4.5rem]
               md:indent-20
               leading-[30px]
-              md:leading-[80px]
+              md:leading-[60px]
               md:font-onestsemibold
               font-onest
             "
