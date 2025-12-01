@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -10,10 +11,11 @@ import About from "./components/About";
 import Feedback from "./components/Feedback";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ProjectDetails from "./pages/ProjectDetails";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function App() {
+function HomePage() {
   const overlayRef = useRef<HTMLDivElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [isRevealComplete, setIsRevealComplete] = useState(false);
@@ -151,5 +153,16 @@ export default function App() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/project/:id" element={<ProjectDetails />} />
+      </Routes>
+    </BrowserRouter>
   );
 }

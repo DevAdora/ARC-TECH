@@ -53,11 +53,11 @@ export default function Header() {
             <h1 className="font-bold text-[2.8rem]">A</h1>
 
             {/* Desktop Navigation - Hidden on mobile */}
-            <nav className="hidden md:block">
+            <nav className="font-onest hidden md:block">
               <ul className="flex space-x-6 text-[1.2rem]">
                 {navItems.map((item, i) => (
                   <li key={i}>
-                    <ScrambleText label={item.name} />
+                    <ScrambleText label={item.name} variant="light" />
                   </li>
                 ))}
               </ul>
@@ -128,7 +128,7 @@ export default function Header() {
                 className="w-20 h-20 flex items-center justify-center relative rounded-full transition-all duration-300 text-white text-[1.6rem]"
                 aria-label="Close menu"
               >
-                <ScrambleText label="Close" isLight={true}></ScrambleText>
+                <ScrambleText label="Close" variant="light"></ScrambleText>
               </button>
             </div>
 
@@ -148,7 +148,7 @@ export default function Header() {
                     transitionDelay: `${i * 100}ms`,
                   }}
                 >
-                  <ScrambleText label={item.name} isLight={true} />
+                  <ScrambleText label={item.name} />
                 </a>
               ))}
             </nav>

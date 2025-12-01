@@ -4,10 +4,10 @@ import { useState, useEffect, useRef } from "react";
 // ScrambleText Component
 export default function ScrambleText({
   label,
-  isLight = false,
+  variant = "default", // default | light | dark
 }: {
   label: string;
-  isLight?: boolean;
+  variant?: "default" | "light" | "dark";
 }) {
   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const [textValue, setTextValue] = useState<string>(label);
@@ -49,14 +49,21 @@ export default function ScrambleText({
     };
   }, []);
 
+  const variantClasses = {
+    default: "hover:text-white after:bg-white after:bottom-[-10px]", // original hover
+    light: "hover:text-white after:bg-white ", // white text hover
+    dark: "hover:text-black after:bg-black", // black text + underline on hover
+  }[variant];
+
   return (
     <span
       onMouseEnter={triggerScramble}
-      className={`font-onest cursor-pointer transition-colors relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-0 after:transition-all after:duration-300 hover:after:w-full ${
-        isLight
-          ? "hover:text-white after:bg-white  after:bottom-[-10px]"
-          : "hover:text-white after:bg-white"
-      }`}
+      className={`
+      font-onest cursor-pointer transition-colors relative inline-block
+      after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px]
+      after:w-0 after:transition-all after:duration-300 hover:after:w-full
+      ${variantClasses}
+    `}
     >
       {textValue}
     </span>

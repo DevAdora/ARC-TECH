@@ -1,8 +1,20 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import ScrambleText from "../components/HeaderLinks";
 
 export default function Footer() {
   const [localTime, setLocalTime] = useState("");
+
+  const footerLinks = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Archive", path: "/archive" },
+    { name: "Gallery", path: "/gallery" },
+    { name: "Projects", path: "/projects" },
+    { name: "About", path: "/about" },
+    { name: "Process", path: "/process" },
+    { name: "Contact", path: "/contact" },
+  ];
 
   useEffect(() => {
     const updateTime = () => {
@@ -35,36 +47,17 @@ export default function Footer() {
           </h1>
         </div>
         <div className="order-1 md:order-2 items-start justify-start text-left">
-          <h1 className="text-[1.6rem]">(Navigation)</h1>
-          <ul className="text-onestsemibold text-[2.5rem] md:text-[4.5rem] leading-[40px] md:leading-[80px] w-[40%]">
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Services</a>
-            </li>
-            <li>
-              <a>Archive</a>
-            </li>
-            <li>
-              <a>Gallery</a>
-            </li>
-            <li>
-              <a>Projects</a>
-            </li>
-            <li>
-              <a>About</a>
-            </li>
-            <li>
-              <a>Process</a>
-            </li>
-            <li>
-              <a>Contact</a>
-            </li>
+          <h1 className="text-[1.6rem] font-onest">(Navigation)</h1>
+          <ul className="text-onestsemibold text-[2.5rem] md:text-[4rem] leading-[40px] md:leading-[60px] w-[40%]">
+            {footerLinks.map((item, i) => (
+              <li key={i}>
+                <ScrambleText label={item.name} variant="dark"/>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="h-full w-full order-2 md:order-3 justify-start items-start grid grid-cols gap-10 md:grid-rows-[60%_40%]">
-          <div className="w-full md:w-[80%] text-left leading-[30px] font-onestsemibold ">
+          <div className="w-full md:w-[80%] text-left leading-[30px] font-onest ">
             <p className="text-[1rem] md:text-[1.4rem] md:text-[1.6rem]">
               (ACKNOWLEDGEMENT)
             </p>
@@ -79,7 +72,7 @@ export default function Footer() {
               opportunity to contribute to this vibrant community.
             </span>
           </div>
-          <div className="text-left text-[1rem] md:text-[1.4rem] md:text-[1.6rem] font-onest md:font-onestsemibold leading-[30px]">
+          <div className="text-left text-[1rem] md:text-[1.4rem] md:text-[1.6rem] font-onest leading-[30px]">
             <h1>(INFO)</h1>
             <p>ADDRESS: COSMOS</p>
             <p>EMAIL: oh.cosmos@gmail.com</p>
@@ -89,18 +82,18 @@ export default function Footer() {
       </div>
       <div className="md:grid md:grid-cols-4 w-full h-full justify-end items-end p-4 md:px-10 gap-5 md:gap-10 ">
         <div className="font-onestsemibold ">
-          <h3 className="text-[0.8rem] md:text-[1.4rem]"> ARC-TECH © 2024</h3>
-          <p className="text-[0.8rem] md:text-[1.2rem]">
+          <h3 className="text-[0.8rem] md:text-[1.2rem]"> ARC-TECH © 2024</h3>
+          <p className="text-[0.8rem] md:text-[1rem]">
             {localTime}
             <span className="">, PHI</span>
           </p>
         </div>
         <div className="font-onestsemibold">
-          <h3 className="text-[0.8rem]  md:text-[1.4rem]"> PRIVACY POLICY</h3>
-          <h3 className="text-[0.8rem]  md:text-[1.4rem]"> TERMS OF SERVICE</h3>
+          <h3 className="text-[0.8rem]  md:text-[1.2rem]"> PRIVACY POLICY</h3>
+          <h3 className="text-[0.8rem]  md:text-[1.2rem]"> TERMS OF SERVICE</h3>
         </div>
         <div className="font-onestsemibold ">
-          <h3 className="text-[0.8rem]  md:text-[1.4rem]"> INSTAGRAM</h3>
+          <h3 className="text-[0.8rem]  md:text-[1.2rem]"> INSTAGRAM</h3>
         </div>
         <div className="absolute bottom-5 right-5 md:bottom-0 md:right-0 flex md:relative md:justify-end md:items-end">
           <button onClick={scrollToTop} aria-label="Scroll to top">
@@ -108,7 +101,7 @@ export default function Footer() {
               href="#"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="text-[1rem] md:text-[1.4rem] tracking-wide border-b border-black font-onestsemibold"
+              className="text-[1rem] md:text-[1.2rem] tracking-wide border-b border-black font-onestsemibold"
             >
               BACK TO TOP ↑
             </motion.a>{" "}

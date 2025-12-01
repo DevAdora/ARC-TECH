@@ -51,12 +51,10 @@ export default function Hero() {
 
   return (
     <>
-      {/* FIXED HERO SECTION */}
       <section
         ref={heroRef}
         className="fixed top-0 left-0 w-full h-screen overflow-hidden z-[1] transition-opacity duration-300"
       >
-        {/* PARALLAX BACKGROUND */}
         <div
           ref={bgRef}
           className="absolute inset-0 w-full h-[120vh] -top-[10vh]"
