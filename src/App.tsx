@@ -117,7 +117,7 @@ function HomePage() {
       {/* Analytics Tracking Script */}
       <Helmet>
         <script 
-          src="https://web-analytics-tan.vercel.app/track.js" 
+          src="https://web-analytics-tan.vercel.app/api/track.js" 
           data-site-id="arc-tech" 
           async 
         />
