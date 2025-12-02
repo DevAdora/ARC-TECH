@@ -113,6 +113,13 @@ function HomePage() {
 
   return (
     <div className="font-sans relative min-h-screen">
+      <Head>
+        <script 
+          src="https://web-analytics-tan.vercel.app/track.js" 
+          data-site-id="arc-tech" 
+          async 
+        />
+      </Head>
       <div ref={contentRef} style={{ visibility: "hidden", opacity: 0 }}>
         <Header />
         <Hero />
