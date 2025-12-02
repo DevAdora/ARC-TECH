@@ -14,7 +14,6 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const checkMobile = () => {
