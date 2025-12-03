@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -115,10 +114,6 @@ function HomePage() {
   return (
     <div className="font-sans relative min-h-screen">
       {/* Analytics Tracking Script */}
-      <Helmet>
-     <script src="https://web-analytics-tan.vercel.app/api/track.js" data-site-id="arc-tech" async></script>
-
-      </Helmet>
 
       <div ref={contentRef} style={{ visibility: "hidden", opacity: 0 }}>
         <Header />
