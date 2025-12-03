@@ -116,11 +116,8 @@ function HomePage() {
     <div className="font-sans relative min-h-screen">
       {/* Analytics Tracking Script */}
       <Helmet>
-        <script
-          src="https://web-analytics-tan.vercel.app/track.js?v=3"
-          data-site-id="arc-tech"
-          async
-        ></script>
+     <script src="https://web-analytics-tan.vercel.app/api/track.js" data-site-id="arc-tech" async></script>
+
       </Helmet>
 
       <div ref={contentRef} style={{ visibility: "hidden", opacity: 0 }}>
