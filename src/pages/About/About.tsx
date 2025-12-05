@@ -14,27 +14,27 @@ const team: TeamMemberData[] = [
   {
     role: "Developer",
     name: "Rai M. Reyes Jr.",
-    img: "/assets/green-1.jpg",
+    img: "/assets/rai.jpg",
   },
   {
     role: "Designer",
     name: "Reymart Louie Capapas",
-    img: "/assets/green-2.jpg",
+    img: "/assets/reymart.jpg",
   },
   {
     role: "Project Manager",
     name: "Vhyron S. Barieza",
-    img: "/assets/green-3.jpg",
+    img: "/assets/vhyron.png",
   },
   {
     role: "Application Architecture",
     name: "Niel Angelo Gencaya",
-    img: "/assets/green-4.jpg",
+    img: "/assets/niel.png",
   },
   {
     role: "Quality Analyst",
     name: "Japheth Gonzales",
-    img: "/assets/green-5.jpg",
+    img: "/assets/japheth.jpg",
   },
   {
     role: "Design Consultant",
@@ -75,7 +75,7 @@ function TeamMember({ role, name, img }: TeamMemberProps) {
             animate={{ opacity: 1, scale: 1, x: 0 }}
             exit={{ opacity: 0, scale: 0.95, x: -20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="hidden lg:block absolute right-4 xl:right-8 top-1/2 -translate-y-1/2 w-[280px] xl:w-[320px] pointer-events-none z-50"
+            className="block lg:block absolute right-4 xl:right top-0 -translate-y-1/2 w-[150px] sm:w-[200px] md:w-[230px] xl:w-[270px] pointer-events-none z-50"
           >
             <div className="relative w-full aspect-square overflow-hidden rounded-2xl shadow-2xl">
               <img
@@ -94,40 +94,48 @@ function TeamMember({ role, name, img }: TeamMemberProps) {
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
-
+      <Header variant="dark"/>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center text-black overflow-hidden">
-        <div className="w-full h-full min-h-screen flex flex-col md:grid md:grid-cols-[75%_25%] justify-end items-end">
-          <div className="relative z-10 text-center px-4 flex items-center justify-center flex-1 md:flex-none">
+      <section
+        className="relative flex items-center justify-center text-black overflow-hidden
+                    mt-10 py-10 sm:py-12 md:py-0 md:min-h-screen"
+      >
+        <div className="w-full h-full flex flex-col md:grid md:grid-cols-[75%_25%] md:justify-end md:items-end">
+          <div className="relative z-10 text-center md:px-4 flex items-center justify-center flex-1 md:flex-none">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-[10rem] sm:text-[10rem] md:text-[8rem] lg:text-[15rem] xl:text-[20rem] 2xl:text-[31rem] font-bold font-onestsemibold leading-[1.1] md:leading-[360px]"
+              className="text-[10rem] sm:text-[12rem] md:text-[15rem] lg:text-[15rem] xl:text-[20rem] 2xl:text-[31rem]
+                   font-bold font-onestsemibold leading-[120px] sm:leading-[140px] md:leading-[200px] lg:leading-[360px]"
             >
               ARC- <br />
-              <span className="hidden md:block">TECH</span>
+              TECH
             </motion.h1>
           </div>
-          <div className="absolute right-2 bottom-2 w-[150px] sm:w-[200px] md:w-auto md:relative">
-            <img
-              src="/assets/green-1.jpg"
-              alt="About Hero"
-              className="w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] object-contain p-2 md:p-6"
-            />
+
+          {/* Image: flow layout on mobile, original behavior preserved on md+ */}
+          <div className="w-full flex justify-start items-start pr-2 md:pr-0 md:static">
+            <div className=" w-[300px] sm:w-[300px] md:w-auto md:relative ">
+              <img
+                src="/assets/green-1.jpg"
+                alt="About Hero"
+                className="w-full h-[300px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px]
+                     object-contain md:p-3"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* Content Section */}
-      <section className="min-h-screen flex justify-center items-center bg-white py-10 md:py-20">
+      <section className="h-full md:min-h-screen flex justify-center items-center bg-white py-10 md:py-20">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="w-full max-w-7xl px-4 md:px-8"
+          className="w-full px-4 md:px-8"
         >
           <div className="mb-8 md:mb-12">
             <h2 className="font-onestsemibold tracking-[-1px] text-sm md:text-base lg:text-[1.5rem] mb-4">
@@ -147,7 +155,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="min-h-screen bg-white py-10 md:py-20">
+      <section className="md:min-h-screen bg-white py-10 md:py-20 mb-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}

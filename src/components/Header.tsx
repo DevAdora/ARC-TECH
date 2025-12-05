@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import ScrambleText from "./HeaderLinks";
 import { useEffect, useState } from "react";
 
+type HeaderProps = {
+  variant?: "light" | "dark";
+};
+
 const navItems = [
   { name: "Home", path: "/" },
   { name: "Showcase", path: "/showcase" },
@@ -10,7 +14,7 @@ const navItems = [
   { name: "Contact", path: "/contact" },
 ];
 
-export default function Header() {
+export default function Header({ variant = "light" }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -44,36 +48,42 @@ export default function Header() {
     setIsMobileMenuOpen(false);
   };
 
+  const textColorClass = variant === "dark" ? "text-black" : "text-white";
+
   return (
     <>
-      {/* Main Header - Only visible when NOT scrolled */}
       {!isScrolled && (
-        <header className="absolute top-0 left-0 w-full z-30 px-8 py-4 font-onest">
-          <div className="flex justify-between items-center text-white">
-            {/* Logo */}
+        <header
+          className={`absolute top-0 left-0 w-full z-30 px-8 py-4 font-onest ${textColorClass}`}
+        >
+          <div className="flex justify-between items-center">
             <Link to="/">
               <h1 className="font-bold text-[2.8rem] cursor-pointer hover:opacity-80 transition">
                 A
               </h1>
             </Link>
 
-            {/* Desktop Navigation - Hidden on mobile */}
             <nav className="font-onest hidden md:block">
               <ul className="flex space-x-6 text-[1.2rem]">
                 {navItems.map((item, i) => (
                   <li key={i}>
                     <Link to={item.path}>
-                      <ScrambleText label={item.name} variant="light" />
+                      <ScrambleText label={item.name} variant={variant} />
                     </Link>
                   </li>
                 ))}
               </ul>
             </nav>
 
-            {/* Desktop CTA - Hidden on mobile */}
             <div className="hidden md:flex gap-4 font-sans">
               <Link to="/contact">
-                <button className="uppercase bg-white text-black px-5 py-2 rounded-md hover:bg-gray-200 transition font-onest">
+                <button
+                  className={`uppercase px-5 py-2 rounded-md transition font-onest ${
+                    variant === "dark"
+                      ? "bg-black text-white hover:bg-gray-800"
+                      : "bg-white text-black hover:bg-gray-200"
+                  }`}
+                >
                   Get in Touch →
                 </button>
               </Link>
@@ -82,7 +92,6 @@ export default function Header() {
         </header>
       )}
 
-      {/* Top-right container - Visible when scrolled or on mobile */}
       <div className="fixed top-6 right-3 flex items-center space-x-4 z-50">
         <div
           className={`flex items-center space-x-4 transition-all duration-300 justify-center ${
