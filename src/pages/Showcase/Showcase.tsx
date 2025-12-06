@@ -1,10 +1,10 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import Footer from "../../components/Footer";
-import type { Project } from "../../data/project"; // adjust import to where your interface lives
-import { projects } from "../../data/project"; // adjust import
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import type { Project } from "../../data/project";
+import { projects } from "../../data/project";
+import Header from "../../components/Header";
 
-const duplicatedProjects: Project[] = [...projects, ...projects];
+const duplicatedProjects: Project[] = [...projects, ...projects, ...projects];
 
 type ProjectCardProps = {
   project: Project;
@@ -17,8 +17,8 @@ function ProjectCard({ project, index, size }: ProjectCardProps) {
 
   const widthClass =
     size === "lg"
-      ? "w-[300px] sm:w-[420px] md:w-[560px] lg:w-[720px]"
-      : "w-[240px] sm:w-[320px] md:w-[420px] lg:w-[520px]";
+      ? "w-[400px] sm:w-[420px] md:w-[560px] lg:w-[720px]"
+      : "w-[340px] sm:w-[320px] md:w-[420px] lg:w-[520px]";
 
   return (
     <motion.div
@@ -81,40 +81,52 @@ function ProjectCard({ project, index, size }: ProjectCardProps) {
 }
 
 export default function ShowcasePage() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+
+      setScrollPosition((prev) => {
+        const newPosition = prev - e.deltaY * 0.5;
+
+        const maxScroll = -(
+          duplicatedProjects.length * 600 -
+          window.innerWidth
+        );
+        return Math.max(maxScroll, Math.min(0, newPosition));
+      });
+    };
+
+    const container = containerRef.current;
+    if (container) {
+      container.addEventListener("wheel", handleWheel, { passive: false });
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener("wheel", handleWheel);
+      }
+    };
+  }, []);
+
   return (
-    <div className="min-h-screen bg-white">
-      <section className="relative flex items-center justify-center text-black overflow-hidden mt-10 py-10 sm:py-12 md:py-20">
-        <div className="w-full px-4 md:px-8 max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 28 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-10 md:mb-16"
-          >
-            <h1 className="text-[3.25rem] sm:text-[5rem] md:text-[7rem] lg:text-[9rem] xl:text-[11rem] font-bold font-onestsemibold leading-none mb-4">
-              OUR WORKS
-            </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-black/60 font-onest max-w-2xl mx-auto">
-              Explore our collection of architectural projects that blend
-              innovation with timeless design
-            </p>
-          </motion.div>
-        </div>
-      </section>
+    <div ref={containerRef} className="fixed inset-0 bg-white overflow-hidden">
+      <Header variant="dark" />
 
-      {/* ONE LINE Infinite Scroll */}
-      <section className="relative pb-16 md:pb-24 overflow-hidden">
-        <div className="mb-6 md:mb-10 px-4 md:px-8">
-          <h2 className="font-onestsemibold tracking-[-1px] text-sm md:text-base lg:text-[1.5rem]">
-            (FEATURED PROJECTS)
-          </h2>
-        </div>
-
-        <div className="relative">
+      {/* Scrollable Projects Container */}
+      <div className="fixed top-1/2 left-0 right-0 -translate-y-1/2">
+        <div className="relative overflow-visible">
           <motion.div
-            className="flex items-stretch"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 36, repeat: Infinity, ease: "linear" }}
+            className="flex items-stretch pl-4 md:pl-8"
+            animate={{ x: scrollPosition }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 30,
+              mass: 0.5,
+            }}
           >
             {duplicatedProjects.map((project, index) => (
               <ProjectCard
@@ -126,9 +138,53 @@ export default function ShowcasePage() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </div>
 
-      <Footer />
+      {/* Scroll indicator - Fixed at bottom */}
+      <div className="fixed bottom-8 left-0 right-0 text-center z-10">
+        <div className="flex items-center justify-center gap-3">
+          <div className="flex items-center gap-2">
+            <svg
+              className="w-4 h-4 text-black/40"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M7 11l5-5m0 0l5 5m-5-5v12"
+              />
+            </svg>
+            <span className="text-black/40 text-xs sm:text-sm font-onest">
+              Scroll Up
+            </span>
+          </div>
+          <div className="w-px h-4 bg-black/20"></div>
+          <div className="flex items-center gap-2">
+            <span className="text-black/40 text-xs sm:text-sm font-onest">
+              Scroll Down
+            </span>
+            <svg
+              className="w-4 h-4 text-black/40"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M17 13l-5 5m0 0l-5-5m5 5V6"
+              />
+            </svg>
+          </div>
+        </div>
+        <p className="text-black/30 text-xs font-onest mt-2">
+          Use mouse wheel to navigate
+        </p>
+      </div>
     </div>
   );
 }
