@@ -48,7 +48,6 @@ export default function ProcessPage() {
   const pinRef = useRef<HTMLDivElement | null>(null);
   const trackRef = useRef<HTMLDivElement | null>(null);
   const cardsRef = useRef<Array<HTMLDivElement | null>>([]);
-  const imageRef = useRef<HTMLImageElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -82,11 +81,9 @@ export default function ProcessPage() {
     const setActive = (idx: number) => {
       setActiveIndex(idx);
 
-      // progress based on steps (simple + stable)
       const percent = `${((idx + 1) / process.length) * 100}%`;
       gsap.set(track, { "--progress": percent } as any);
 
-      // emphasize active card (right)
       cards.forEach((card, i) => {
         gsap.to(card, {
           opacity: i === idx ? 1 : 0.4,
@@ -100,7 +97,6 @@ export default function ProcessPage() {
     };
 
     const ctx = gsap.context(() => {
-      // initial states
       cards.forEach((card, i) => {
         gsap.set(card, {
           opacity: i === 0 ? 1 : 0.4,
@@ -113,7 +109,6 @@ export default function ProcessPage() {
         "--progress": `${(1 / process.length) * 100}%`,
       } as any);
 
-      // Pin the left column for the duration of the right column scroll
       ScrollTrigger.create({
         trigger: section,
         start: "top top",
@@ -123,7 +118,6 @@ export default function ProcessPage() {
         anticipatePin: 1,
       });
 
-      // One trigger per card => PERFECT sync
       const cardTriggers = cards.map((card, idx) =>
         ScrollTrigger.create({
           trigger: card,
@@ -134,7 +128,6 @@ export default function ProcessPage() {
         })
       );
 
-      // Optional: snap to nearest card
       ScrollTrigger.create({
         trigger: section,
         start: "top top",
@@ -150,7 +143,6 @@ export default function ProcessPage() {
         },
       });
 
-      // ensure correct initial active
       setActive(0);
 
       return () => {
@@ -167,7 +159,6 @@ export default function ProcessPage() {
     <div className="min-h-screen bg-white">
       <Header variant="dark" />
 
-      {/* Hero Section */}
       <section className="relative mt-20 py-10 md:py-10 md:min-h-screen flex items-center text-black overflow-hidden">
         <div className="w-full mx-auto px-4 md:px-8">
           <div className="grid gap-10 md:gap-14">

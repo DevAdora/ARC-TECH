@@ -16,7 +16,14 @@ const navItems = [
 export default function Header({ variant = "light" }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
   useEffect(() => {
     const checkMobile = () => {
@@ -47,6 +54,33 @@ export default function Header({ variant = "light" }: HeaderProps) {
     setIsMobileMenuOpen(false);
   };
 
+  const openContactForm = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsContactFormOpen(true);
+    closeMobileMenu();
+  };
+
+  const closeContactForm = () => {
+    setIsContactFormOpen(false);
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    // Handle form submission logic here
+    closeContactForm();
+    setFormData({ name: "", email: "", phone: "", message: "" });
+  };
+
   const textColorClass = variant === "dark" ? "text-black" : "text-white";
 
   return (
@@ -75,17 +109,16 @@ export default function Header({ variant = "light" }: HeaderProps) {
             </nav>
 
             <div className="hidden md:flex gap-4 font-sans">
-              <Link to="/contact">
-                <button
-                  className={`uppercase px-5 py-2 rounded-md transition font-onest ${
-                    variant === "dark"
-                      ? "bg-black text-white hover:bg-gray-800"
-                      : "bg-white text-black hover:bg-gray-200"
-                  }`}
-                >
-                  Get in Touch →
-                </button>
-              </Link>
+              <button
+                onClick={openContactForm}
+                className={`uppercase px-5 py-2 rounded-md transition font-onest ${
+                  variant === "dark"
+                    ? "bg-black text-white hover:bg-gray-800"
+                    : "bg-white text-black hover:bg-gray-200"
+                }`}
+              >
+                Get in Touch →
+              </button>
             </div>
           </div>
         </header>
@@ -99,11 +132,12 @@ export default function Header({ variant = "light" }: HeaderProps) {
               : "opacity-0 -translate-y-2 pointer-events-none"
           }`}
         >
-          <Link to="/contact">
-            <button className="uppercase bg-[#080807] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition font-onest">
-              Get in Touch →
-            </button>
-          </Link>
+          <button
+            onClick={openContactForm}
+            className="uppercase bg-[#080807] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition font-onest"
+          >
+            Get in Touch →
+          </button>
 
           <button
             onClick={toggleMobileMenu}
@@ -115,6 +149,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
         </div>
       </div>
 
+      {/* Mobile Menu */}
       <>
         <div
           className={`fixed inset-0 bg-black/50 z-40 transition-all duration-500 ease-in-out ${
@@ -123,7 +158,6 @@ export default function Header({ variant = "light" }: HeaderProps) {
           onClick={closeMobileMenu}
         ></div>
 
-        {/* Side Menu Panel */}
         <div
           className={`fixed top-0 right-0 w-full h-full bg-[#080807] z-50 transform transition-all duration-700 ease-in-out ${
             isMobileMenuOpen
@@ -132,7 +166,6 @@ export default function Header({ variant = "light" }: HeaderProps) {
           }`}
         >
           <div className="flex flex-col p-8 space-y-8 h-full">
-            {/* Close button */}
             <div className="flex justify-between items-center">
               <p className="text-[1.6rem] text-[#f0ede4] font-onest">
                 ARC-TECH © 2024
@@ -147,7 +180,6 @@ export default function Header({ variant = "light" }: HeaderProps) {
               </button>
             </div>
 
-            {/* Navigation Links */}
             <nav className="flex flex-col space-y-6 flex-1 justify-center font-onest">
               {navItems.map((item, i) => (
                 <Link
@@ -167,6 +199,243 @@ export default function Header({ variant = "light" }: HeaderProps) {
                 </Link>
               ))}
             </nav>
+          </div>
+        </div>
+      </>
+
+      <>
+        <div
+          className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] transition-all duration-500 ease-out ${
+            isContactFormOpen ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
+          onClick={closeContactForm}
+        ></div>
+
+        <div
+          className={`fixed top-0 right-0 h-full bg-[#080807] z-[70] shadow-2xl transform transition-all duration-700 ease-in-out overflow-y-auto ${
+            isMobile ? "w-full" : "w-full md:w-[40%]"
+          } ${
+            isContactFormOpen
+              ? "translate-x-0 opacity-100"
+              : "translate-x-full opacity-0"
+          }`}
+        >
+          <div className="flex flex-col h-full">
+            <div className="sticky top-0 bg-[#080807] border-b border-white px-6 md:px-10 py-6 z-10">
+              <div className="flex justify-between items-center">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-onestsemibold tracking-[-1px] text-white">
+                    Get in Touch
+                  </h2>
+                  <p className="text-sm text-black/60 mt-1 font-onest text-white">
+                    Let's start a conversation
+                  </p>
+                </div>
+                <button
+                  onClick={closeContactForm}
+                  className="w-12 h-12 flex items-center justify-center rounded-full hover:bg-black/5 transition-colors group"
+                  aria-label="Close contact form"
+                >
+                  <svg
+                    className="w-6 h-6 text-white group-hover:text-black transition-colors"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div className="flex-1 px-6 md:px-10 py-8">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div
+                  className={`transform transition-all duration-500 ${
+                    isContactFormOpen
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-8 opacity-0"
+                  }`}
+                  style={{ transitionDelay: "100ms" }}
+                >
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-onestsemibold text-white mb-2"
+                  >
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all font-onest bg-[#080807]"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                <div
+                  className={`transform transition-all duration-500 ${
+                    isContactFormOpen
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-8 opacity-0"
+                  }`}
+                  style={{ transitionDelay: "200ms" }}
+                >
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-onestsemibold text-white mb-2"
+                  >
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all font-onest bg-[#080807]"
+                    placeholder="john@example.com"
+                  />
+                </div>
+
+                <div
+                  className={`transform transition-all duration-500 ${
+                    isContactFormOpen
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-8 opacity-0"
+                  }`}
+                  style={{ transitionDelay: "300ms" }}
+                >
+                  <label
+                    htmlFor="phone"
+                    className="block text-sm font-onestsemibold text-white mb-2"
+                  >
+                    Phone Number
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all font-onest bg-[#080807]"
+                    placeholder="+1 (555) 000-0000"
+                  />
+                </div>
+
+                <div
+                  className={`transform transition-all duration-500 ${
+                    isContactFormOpen
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-8 opacity-0"
+                  }`}
+                  style={{ transitionDelay: "400ms" }}
+                >
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-onestsemibold text-white mb-2"
+                  >
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={6}
+                    className="w-full px-4 py-3 border border-white rounded-lg focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all font-onest bg-[#080807]"
+                    placeholder="Tell us about your project..."
+                  />
+                </div>
+
+                <div
+                  className={`transform transition-all duration-500 ${
+                    isContactFormOpen
+                      ? "translate-x-0 opacity-100"
+                      : "translate-x-8 opacity-0"
+                  }`}
+                  style={{ transitionDelay: "500ms" }}
+                >
+                  <button
+                    type="submit"
+                    className="w-full bg-white text-[#080807] py-4 rounded-lg font-onestsemibold text-base hover:font-onestbold transition-all duration-300 hover:shadow-lg"
+                  >
+                    Send Message →
+                  </button>
+                </div>
+              </form>
+
+              <div
+                className={`mt-12 pt-8 border-t border-black/10 space-y-6 transform transition-all duration-500 ${
+                  isContactFormOpen
+                    ? "translate-x-0 opacity-100"
+                    : "translate-x-8 opacity-0"
+                }`}
+                style={{ transitionDelay: "600ms" }}
+              >
+                <div>
+                  <h3 className="text-sm font-onestsemibold text-white mb-2">
+                    EMAIL
+                  </h3>
+                  <a
+                    href="mailto:hello@arctech.com"
+                    className="text-base font-onest text-white hover:text-white transition-colors"
+                  >
+                    hello@arctech.com
+                  </a>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-onestsemibold text-white mb-2">
+                    PHONE
+                  </h3>
+                  <a
+                    href="tel:+15550000000"
+                    className="text-base font-onest text-white hover:text-white transition-colors"
+                  >
+                    +1 (555) 000-0000
+                  </a>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-onestsemibold text-white mb-2">
+                    OFFICE
+                  </h3>
+                  <p className="text-base font-onest text-white">
+                    123 Architecture Street
+                    <br />
+                    Design District, NY 10001
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-onestsemibold text-white mb-3">
+                    FOLLOW US
+                  </h3>
+                  <div className="flex gap-4">
+                    {["Instagram", "LinkedIn", "Twitter"].map((social) => (
+                      <a
+                        key={social}
+                        href="#"
+                        className="text-sm font-onest text-white transition-colors"
+                      >
+                        {social}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </>
