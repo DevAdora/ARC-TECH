@@ -9,9 +9,8 @@ type HeaderProps = {
 const navItems = [
   { name: "Home", path: "/" },
   { name: "Showcase", path: "/showcase" },
-  { name: "Services", path: "/services" },
+  { name: "Process", path: "/process" },
   { name: "About", path: "/about" },
-  { name: "Contact", path: "/contact" },
 ];
 
 export default function Header({ variant = "light" }: HeaderProps) {
@@ -100,14 +99,12 @@ export default function Header({ variant = "light" }: HeaderProps) {
               : "opacity-0 -translate-y-2 pointer-events-none"
           }`}
         >
-          {/* Get in Touch Button */}
           <Link to="/contact">
             <button className="uppercase bg-[#080807] text-white px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition font-onest">
               Get in Touch →
             </button>
           </Link>
 
-          {/* Menu Button */}
           <button
             onClick={toggleMobileMenu}
             className="bg-[#f2f0eb] text-black px-6 py-3 rounded-full text-sm sm:text-base font-medium tracking-wide hover:opacity-90 transition hover:scale-105"
@@ -118,9 +115,7 @@ export default function Header({ variant = "light" }: HeaderProps) {
         </div>
       </div>
 
-      {/* Side Menu Panel */}
       <>
-        {/* Backdrop */}
         <div
           className={`fixed inset-0 bg-black/50 z-40 transition-all duration-500 ease-in-out ${
             isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"

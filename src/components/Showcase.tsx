@@ -6,8 +6,6 @@ interface CursorPosition {
   x: number;
   y: number;
 }
-
-// Custom cursor component
 function CustomCursor({
   isHovering,
   position,

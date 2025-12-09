@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import type { Project } from "../../data/project";
 import { projects } from "../../data/project";
 import Header from "../../components/Header";
+import { useNavigate } from "react-router-dom";
 
 const duplicatedProjects: Project[] = [...projects, ...projects, ...projects];
 
@@ -13,7 +14,12 @@ type ProjectCardProps = {
 };
 
 function ProjectCard({ project, index, size }: ProjectCardProps) {
+  const navigate = useNavigate();
   const [isHovered, setIsHovered] = useState(false);
+
+  const handleProjectClick = (projectId: string) => {
+    navigate(`/project/${projectId}`);
+  };
 
   const widthClass =
     size === "lg"
@@ -29,6 +35,7 @@ function ProjectCard({ project, index, size }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.55, delay: Math.min(index * 0.03, 0.6) }}
       viewport={{ once: true }}
+      onClick={() => handleProjectClick(project.id)}
     >
       <div className="relative overflow-hidden rounded-2xl group">
         <div className="relative aspect-[4/3] overflow-hidden bg-gray-200">

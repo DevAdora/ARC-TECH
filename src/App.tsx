@@ -13,7 +13,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ProjectDetails from "./pages/ProjectDetails";
 import ShowcasePage from "./pages/Showcase/Showcase";
-import ServicesPage from "./pages/Services/Services";
+import ProcessPage from "./pages/Process/Process";
 import AboutPage from "./pages/About/About";
 import ContactPage from "./pages/Contact/Contact";
 
@@ -169,7 +169,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/project/:id" element={<ProjectDetails />} />
         <Route path="/showcase" element={<ShowcasePage />} />
-        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/process" element={<ProcessPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
       </Routes>

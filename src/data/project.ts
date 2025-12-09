@@ -111,4 +111,20 @@ export const projects: Project[] = [
       category: "Residential",
     },
   },
+  {
+    id: "green",
+    number: "(07)",
+    title: "Green Ski Slope Residence",
+    author: "Larue Architects",
+    image: "/assets/green-skislope-residence-laruearchitects.jpg",
+    description:
+      "Inspired by Japanese aesthetics, this project celebrates imperfection and natural beauty. The design uses raw materials and simple forms to create spaces of profound calm and contemplation.",
+    gallery: ["/assets/green-1.jpg", "/assets/green-2.jpg", "/assets/green-3.jpg", "/assets/green-4.jpg", "/assets/green-5.jpg", "/assets/green-6.jpg", "/assets/green-7.jpg", "/assets/green-8.jpg", "/assets/green-9.jpg"],
+    details: {
+      location: "Kyoto, Japan",
+      year: "2023",
+      area: "350 m²",
+      category: "Residential",
+    },
+  }
 ];
