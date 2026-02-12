@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ScrambleText from "../components/HeaderLinks";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const [localTime, setLocalTime] = useState("");
@@ -51,7 +52,9 @@ export default function Footer() {
           <ul className="text-onestsemibold text-[2.5rem] md:text-[4rem] leading-[40px] md:leading-[60px] w-[40%]">
             {footerLinks.map((item, i) => (
               <li key={i}>
-                <ScrambleText label={item.name} variant="dark"/>
+                <Link to={item.path}>
+                  <ScrambleText label={item.name} variant="dark" />
+                </Link>
               </li>
             ))}
           </ul>
