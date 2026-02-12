@@ -76,7 +76,6 @@ export default function Header({ variant = "light" }: HeaderProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
-    // Handle form submission logic here
     closeContactForm();
     setFormData({ name: "", email: "", phone: "", message: "" });
   };

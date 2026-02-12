@@ -347,7 +347,7 @@ export default function ProjectDetails() {
         <div className="p-8">{renderEnhancedGallery()}</div>
 
         {/* EXPLORE MORE PROJECTS */}
-        <div className="p-8 bg-gray-50">
+        <div className="p-8">
           <div className="w-full">
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
